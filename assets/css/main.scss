@@ -1,0 +1,42 @@
+$forma: forma-djr-micro, sans-serif;
+$mono: 'IBM Plex Mono', monospace;
+$obviously: obviously-wide, sans-serif;
+
+$background: #000;
+$primary: #F44708;
+$seconday: #FFAE03;
+
+$gray-dark: #2E282A;
+$gray-light-dark: #4E484C;
+$gray-medium: #6D676E;
+$gray-light: #CECCCC;
+$gray-very-light: #FEFFFE;
+
+body {
+    margin: 0;
+
+    background-color: $background;
+    color: $gray-very-light;
+    font-family: $forma;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: $obviously;
+    font-weight: 660;
+    font-size: 40px;
+    line-height: 63px;
+    margin: 0;
+    letter-spacing: 0.2em;
+    text-transform: lowercase;
+}
+
+h2 {
+    font-family: $forma;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.035em;
+}
