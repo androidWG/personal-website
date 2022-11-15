@@ -5,7 +5,7 @@ $large-size: 31px;
 
 .button {
     transition-property: box-shadow, background, color;
-    transition-delay: 0.15s;
+    transition-duration: 0.15s;
 
     display: flex;
     flex-direction: row;
