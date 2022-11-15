@@ -23,20 +23,47 @@ body {
 }
 
 h1 {
+    margin: 0;
+
     font-family: $obviously;
     font-weight: 660;
     font-size: 40px;
     line-height: 63px;
-    margin: 0;
     letter-spacing: 0.2em;
     text-transform: lowercase;
 }
 
 h2 {
+    margin: 0;
+
     font-family: $forma;
     font-style: normal;
     font-weight: 900;
     font-size: 40px;
     line-height: 48px;
     letter-spacing: -0.035em;
+}
+
+h3 {
+    margin: 0;
+
+    font-family: $forma;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: -0.035em;
+
+    color: $gray-very-light;
+}
+
+.date {
+    margin: 0;
+
+    font-family: $forma;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: $gray-medium;
 }
