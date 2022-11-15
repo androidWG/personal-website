@@ -1,7 +1,7 @@
 <script lang="ts">
 import Vue from 'vue'
-import LargeButton from './LargeButton.vue';
-import SmallButton from './SmallButton.vue';
+import LargeButton from './button/Large.vue';
+import SmallButton from './button/Small.vue';
 import Separator from './Separator.vue';
 export default Vue.extend({
     name: "PageHeader",

@@ -1,7 +1,10 @@
 <template>
   <div>
     <page-header />
-    <slot />
+    <div class="scroll">
+      <slot />
+      <footer></footer>
+    </div>
   </div>
 </template>
 
@@ -13,12 +16,18 @@ export default Vue.extend({
 </script>
 
 <style>
-  .section {
+  .scroll {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 32px 0px;
-    gap: 32px;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .skinny {
+    max-width: 768px;
+  }
+
+  .wide {
+    max-width: 1200px;
   }
 </style>
