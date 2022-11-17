@@ -1,14 +1,20 @@
 <template>
   <div class="music-item">
-    <div class="cover" v-on:click="toggle">
+    <button
+      class="clean cover"
+      :class="{ 'cover-hover': isPlaying || hovered }"
+      @click="toggle"
+      @mouseenter="toggleHover"
+      @mouseleave="toggleHover"
+    >
       <img class="cover-img" :src="cover" alt="Album Cover" />
       <div class="cover-btn">
         <PlayPauseButton ref="button" />
         <p id="play-text">
-          {{!isPlaying?"play sample":"stop playing"}}
+          {{ isPlaying ? "stop playing" : "play sample" }}
         </p>
       </div>
-    </div>
+    </button>
     <div class="music-item-info">
       <div>
         <h3>{{ title }}</h3>
@@ -27,9 +33,13 @@
 </template>
 
 <script>
+let timerID = null;
+
 import Vue from "vue";
+import { Howl } from "howler";
 import SmallButton from "../button/Small.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
+import scale from "../scaler.js";
 export default Vue.extend({
   props: {
     cover: String,
@@ -37,16 +47,54 @@ export default Vue.extend({
     date: String,
     links: Array,
   },
+  setup() {
+    const sample = new Howl({
+      src: ["/samples/test.mp3"],
+    });
+
+    return {
+      sample,
+    };
+  },
   data() {
     return {
-      isPlaying: false
-    }
+      isPlaying: false,
+      hovered: false,
+    };
   },
   components: { SmallButton, PlayPauseButton },
   methods: {
     toggle() {
-      this.isPlaying != this.isPlaying;
+      if (!this.isPlaying) {
+        this.sample.play();
+        this.sample.on("end", () => {
+          console.log("finished playing");
+          this.isPlaying = !this.isPlaying;
+          this.$refs.button.isPlaying = this.isPlaying;
+        });
+
+        let startTime = Date.now();
+        let finishTime = startTime + this.sample.duration() * 1000;
+        timerID = setInterval(this.updateProgress, 300, startTime, finishTime);
+
+        this.$refs.button.progress = 0;
+      } else {
+        this.sample.stop();
+        clearInterval(timerID);
+        timerID = null;
+      }
+
+      this.isPlaying = !this.isPlaying;
       this.$refs.button.isPlaying = this.isPlaying;
+    },
+    updateProgress(startTime, finishTime) {
+      if (this.sample.playing && this.$refs.button !== undefined) {
+        let progress = scale(startTime, finishTime, 0, 100, Date.now());
+        this.$refs.button.progress = progress;
+      }
+    },
+    toggleHover() {
+      this.hovered = !this.hovered;
     },
   },
 });
@@ -71,34 +119,34 @@ export default Vue.extend({
   position: relative;
   display: inline-block;
 
-  transition-property: box-shadow, filter;
+  transition-property: box-shadow;
   transition-duration: 0.15s;
   border-radius: 16px;
-
+  color: main.$gray-very-light;
   box-shadow: shadows.$cover-default;
+  cursor: pointer;
 
   .cover-btn {
     visibility: hidden;
-  }
-
-  &:hover {
-    box-shadow: shadows.$hovered;
-    .cover-img {
-      filter: brightness(50%);
-    }
-
-    .cover-btn {
-      visibility: visible;
-    }
   }
 
   &:active {
     box-shadow: shadows.$highlighted;
 
     .cover-btn {
-      fill: main.$gray-medium;
-      color: main.$gray-medium;
+      filter: brightness(50%);
     }
+  }
+}
+
+.cover-hover {
+  box-shadow: shadows.$hovered;
+  .cover-img {
+    filter: brightness(50%);
+  }
+
+  .cover-btn {
+    visibility: visible;
   }
 }
 
@@ -109,6 +157,7 @@ export default Vue.extend({
   transform: translate(-50%, -50%);
 
   text-align: center;
+  user-select: none;
 
   p {
     font-family: main.$mono;
@@ -122,6 +171,13 @@ export default Vue.extend({
 .cover-img {
   display: block;
   width: inherit;
+  border-radius: 16px;
+  transition-property: filter;
+  transition-duration: inherit;
+}
+
+.play-icon {
+  margin: 0 auto;
 }
 
 .music-item-info {
