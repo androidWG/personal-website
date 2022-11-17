@@ -2,16 +2,14 @@
   <div class="music-item">
     <button
       class="clean cover"
-      :class="{ 'cover-hover': isPlaying || hovered }"
+      :class="{ 'cover-playing': isPlaying }"
       @click="toggle"
-      @mouseenter="toggleHover"
-      @mouseleave="toggleHover"
     >
       <img class="cover-img" :src="cover" alt="Album Cover" />
       <div class="cover-btn">
         <PlayPauseButton ref="button" />
         <p id="play-text">
-          {{ isPlaying ? "stop playing" : "play sample" }}
+          {{ isPlaying || isPlaying ? "stop playing" : "play sample" }}
         </p>
       </div>
     </button>
@@ -36,7 +34,7 @@
 let timerID = null;
 
 import Vue from "vue";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 import SmallButton from "../button/Small.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
 import scale from "../scaler.js";
@@ -48,8 +46,10 @@ export default Vue.extend({
     links: Array,
   },
   setup() {
+    Howler.preload = false;
     const sample = new Howl({
       src: ["/samples/test.mp3"],
+      pool: 1,
     });
 
     return {
@@ -59,7 +59,6 @@ export default Vue.extend({
   data() {
     return {
       isPlaying: false,
-      hovered: false,
     };
   },
   components: { SmallButton, PlayPauseButton },
@@ -67,6 +66,7 @@ export default Vue.extend({
     toggle() {
       if (!this.isPlaying) {
         this.sample.play();
+
         this.sample.on("end", () => {
           console.log("finished playing");
           this.isPlaying = !this.isPlaying;
@@ -92,9 +92,6 @@ export default Vue.extend({
         let progress = scale(startTime, finishTime, 0, 100, Date.now());
         this.$refs.button.progress = progress;
       }
-    },
-    toggleHover() {
-      this.hovered = !this.hovered;
     },
   },
 });
@@ -130,6 +127,17 @@ export default Vue.extend({
     visibility: hidden;
   }
 
+  &:hover {
+    box-shadow: shadows.$hovered;
+    .cover-img {
+      filter: brightness(50%);
+    }
+
+    .cover-btn {
+      visibility: visible;
+    }
+  }
+
   &:active {
     box-shadow: shadows.$highlighted;
 
@@ -139,15 +147,14 @@ export default Vue.extend({
   }
 }
 
-.cover-hover {
-  box-shadow: shadows.$hovered;
+.cover-playing {
   .cover-img {
-    filter: brightness(50%);
-  }
+      filter: brightness(50%);
+    }
 
-  .cover-btn {
-    visibility: visible;
-  }
+    .cover-btn {
+      visibility: visible;
+    }
 }
 
 .cover-btn {
