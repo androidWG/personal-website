@@ -3,7 +3,7 @@
     <page-header />
     <div class="scroll">
       <slot />
-      <footer></footer>
+      <page-footer></page-footer>
     </div>
   </div>
 </template>
@@ -21,6 +21,7 @@ export default Vue.extend({
     flex-direction: column;
     align-items: center;
     padding: 0px;
+    gap: 32px;
   }
 
   .skinny {
