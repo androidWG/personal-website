@@ -2,15 +2,9 @@
   <div class="skinny">
     <h1 id="hello">Hello!</h1>
     <p class="body">
-      I’m Sam Rodrigues, also know online as androidWG. I make many things but
-      mostly music, apps, websites and UI/UX designs. You can find almost all of
-      my recent work on this website.
+      I’m Sam Rodrigues, also know online as androidWG. I make many things but mostly music, apps, websites and UI/UX designs. You can find almost all of my recent work on this website.
       <br />
-      Brazilian born but living in Montréal, Canada since February 2022, I’ve
-      been programming since 2013, designing since 2018 and making music since
-      2020. I love using my projects to learn new technologies, techniques,
-      platforms, and of course ideas, and my overall work extends to many more
-      projects that didn’t pass the trial phase.
+      Brazilian born but living in Montréal, Canada since February 2022, I’ve been programming since 2013, designing since 2018 and making music since 2020. I love using my projects to learn new technologies, techniques, platforms, and of course ideas, and my overall work extends to many more projects that didn’t pass the trial phase.
     </p>
 
     <div class="highlights">
@@ -46,6 +40,12 @@ export default Vue.extend({
     MusicItem,
     CodingItem,
   },
+  async asyncData({$content, params}) {
+    const items = await $content("home", params.slug)
+    return {
+
+    }
+  }
 });
 </script>
 
