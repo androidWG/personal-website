@@ -32,8 +32,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import MusicItem from "../items/Music.vue";
-import CodingItem from "../items/Coding.vue";
+import MusicItem from "../items/MusicItem.vue";
+import CodingItem from "../items/CodingItem.vue";
 
 export default Vue.extend({
   components: {
