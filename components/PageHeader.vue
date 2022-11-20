@@ -16,7 +16,6 @@ export default Vue.extend({
             <img src="@/assets/svg/Logo.svg" style="width: 50px; height: 50px;" alt="Logo">
             <h1>sam rodrigues</h1>
         </div>
-        <Links/>
         <div class="h-list">
             <LargeButton text="Home" icon="home"/>
             <Separator />

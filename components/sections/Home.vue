@@ -16,10 +16,21 @@
     <div class="highlights">
       <div class="highlight-section">
         <h2>Latest Music</h2>
-        <MusicItem cover="/covers/c-system32.jpg" title="C:\System32\media" date="TBD"/>
+        <MusicItem
+          cover="/covers/c-system32.jpg"
+          title="C:\System32\media"
+          date="TBD"
+        />
       </div>
       <div class="highlight-section" style="flex-grow: 1">
         <h2>My Apps</h2>
+        <CodingItem
+          :compact="true"
+          title="Discord.fm"
+          dateStart="2021"
+          dateEnd="present">
+          A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord rich presence.
+        </CodingItem>
       </div>
     </div>
   </div>
@@ -28,10 +39,12 @@
 <script lang="ts">
 import Vue from "vue";
 import MusicItem from "../items/Music.vue";
+import CodingItem from "../items/Coding.vue";
 
 export default Vue.extend({
   components: {
     MusicItem,
+    CodingItem,
   },
 });
 </script>
