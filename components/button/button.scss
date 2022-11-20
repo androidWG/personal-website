@@ -6,6 +6,7 @@ $large-size: 31px;
 .button {
     transition-property: box-shadow, background, color;
     transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     display: flex;
     flex-direction: row;
@@ -29,6 +30,12 @@ $large-size: 31px;
         color: main.$gray-very-light;
         background: main.$gray-medium;
         box-shadow: shadows.$highlighted;
+    }
+
+    &[selected=true] {
+        color: main.$gray-very-light;
+        background: main.$primary;
+        box-shadow: shadows.$selected;
     }
 }
 

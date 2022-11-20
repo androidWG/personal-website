@@ -1,6 +1,11 @@
 <template>
   <div class="play-icon">
-    <img v-if="!isPlaying" src="@/assets/icons/play.svg" alt="Play sample" />
+    <img
+      v-if="!isPlaying"
+      src="@/assets/icons/play.svg"
+      alt="Play sample"
+      style="filter: invert(100%)"
+    />
     <div v-if="isPlaying" class="stop-btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,8 +24,10 @@
           id="pct-ind"
           ref="indicator"
           :style="`
-            stroke-dashoffset: ${(1 - progress / 100) * (2 * (22 / 7) * ringSize - ringStrokeSize)};
-            stroke-dasharray: ${( 2 * (22 / 7) * ringSize )};
+            stroke-dashoffset: ${
+              (1 - progress / 100) * (2 * (22 / 7) * ringSize - ringStrokeSize)
+            };
+            stroke-dasharray: ${2 * (22 / 7) * ringSize};
           `"
         ></circle>
       </svg>
