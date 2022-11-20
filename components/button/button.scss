@@ -31,12 +31,12 @@ $large-size: 31px;
         background: main.$gray-medium;
         box-shadow: shadows.$highlighted;
     }
+}
 
-    &[selected=true] {
-        color: main.$gray-very-light;
-        background: main.$primary;
-        box-shadow: shadows.$selected;
-    }
+.selected {
+  color: main.$gray-very-light;
+  background: main.$primary;
+  box-shadow: shadows.$selected;
 }
 
 .icon {

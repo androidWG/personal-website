@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader />
+    <PageHeader :selected="selected" />
     <div class="scroll">
       <slot />
       <PageFooter />
@@ -13,7 +13,10 @@ import Vue from 'vue'
 import PageHeader from "~/components/page/PageHeader.vue";
 import PageFooter from "~/components/page/PageFooter.vue";
 export default Vue.extend({
-  components: {PageFooter, PageHeader}
+  components: {PageFooter, PageHeader},
+  props: {
+    selected: String
+  }
 })
 </script>
 
@@ -29,5 +32,4 @@ export default Vue.extend({
   .skinny {
     max-width: 768px;
   }
-
 </style>
