@@ -1,7 +1,7 @@
 <template>
   <div class="music-item">
     <div class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
-      <img class="cover-img" :src="cover" alt="Album Cover" />
+      <img class="cover-img" :src="`/covers/${filename}.jpg`" alt="Album Cover" />
       <div class="cover-btn">
         <PlayPauseButton style="margin: 0 auto" ref="button" />
         <p id="play-text">
@@ -37,16 +37,16 @@ import scale from "../scaler.js";
 
 export default Vue.extend({
   props: {
-    cover: String,
+    filename: String,
     title: String,
     date: String,
     link: String,
     links: Array,
   },
-  setup() {
+  setup(props) {
     Howler.preload = false;
     const sample = new Howl({
-      src: ["/samples/test.mp3"],
+      src: [`/samples/${props.filename}.mp3`],
       pool: 1,
     });
 
