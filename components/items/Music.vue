@@ -1,23 +1,19 @@
 <template>
   <div class="music-item">
-    <button
-      class="clean cover"
-      :class="{ 'cover-playing': isPlaying }"
-      @click="toggle"
-    >
+    <button class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
       <img class="cover-img" :src="cover" alt="Album Cover" />
       <div class="cover-btn">
-        <PlayPauseButton ref="button" />
+        <PlayPauseButton style="margin: 0 auto" ref="button" />
         <p id="play-text">
           {{ isPlaying || isPlaying ? "stop playing" : "play sample" }}
         </p>
       </div>
     </button>
-    <div class="music-item-info">
-      <div>
-        <h3>{{ title }}</h3>
+    <div class="info">
+      <a :href="link" class="main-info">
+        <h3 class="list-title">{{ title }}</h3>
         <p class="date">{{ date }}</p>
-      </div>
+      </a>
       <div>
         <SmallButton
           v-for="(l, index) in links"
@@ -43,6 +39,7 @@ export default Vue.extend({
     cover: String,
     title: String,
     date: String,
+    link: String,
     links: Array,
   },
   setup() {
@@ -97,9 +94,10 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "@/assets/css/main.scss";
-@use "@/assets/css/shadows.scss";
+@use "@/assets/css/_mixins" as m;
+@use "@/assets/css/_shadows.scss" as shadows;
 
 .music-item {
   width: 347px;
@@ -147,14 +145,14 @@ export default Vue.extend({
   }
 }
 
-.cover-playing {
+.playing {
   .cover-img {
-      filter: brightness(50%);
-    }
+    filter: brightness(50%);
+  }
 
-    .cover-btn {
-      visibility: visible;
-    }
+  .cover-btn {
+    visibility: visible;
+  }
 }
 
 .cover-btn {
@@ -177,17 +175,18 @@ export default Vue.extend({
 
 .cover-img {
   display: block;
-  width: inherit;
+  width: 100%;
   border-radius: 16px;
   transition-property: filter;
   transition-duration: inherit;
 }
 
-.play-icon {
-  margin: 0 auto;
+.main-info {
+  @include m.title;
+  @include m.title-effects;
 }
 
-.music-item-info {
+.info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
