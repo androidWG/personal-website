@@ -31,7 +31,7 @@ let timerID = null;
 
 import Vue from "vue";
 import {Howl, Howler} from "howler";
-import SmallButton from "../button/Small.vue";
+import SmallButton from "../button/SmallButton.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
 import scale from "../scaler.js";
 

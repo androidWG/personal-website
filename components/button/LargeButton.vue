@@ -4,13 +4,14 @@ export default Vue.extend({
     props: {
         link: String,
         text: String,
-        icon: String
+        icon: String,
+        selected: Boolean
     }
 })
 </script>
 
 <template>
-<a class="large button" :href="link">
+<a class="large button" :class="{selected: selected}" :href="link">
     <img v-if="icon !== undefined" class="icon" :src="require(`@/assets/icons/${icon}.svg`)" alt="">
     <p v-if="text !== undefined" class="text">{{text}}</p>
 </a>

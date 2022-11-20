@@ -36,8 +36,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import SmallButton from "./button/Small.vue";
-import LargeButton from "./button/Large.vue";
+import SmallButton from "./button/SmallButton.vue";
+import LargeButton from "./button/LargeButton.vue";
 export default Vue.extend({
   components: {
     LargeButton,
