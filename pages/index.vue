@@ -1,17 +1,19 @@
 <template>
-  <page>
+  <Page>
     <HomeSection/>
-  </page>
+  </Page>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import HomeSection from '~/components/sections/Home.vue';
+import Page from '~/components/page/Page.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
   components: {
-    HomeSection
+    HomeSection,
+    Page
   }
 })
 </script>

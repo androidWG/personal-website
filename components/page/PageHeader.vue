@@ -1,9 +1,9 @@
 <script lang="ts">
 import Vue from 'vue'
-import LargeButton from './button/Large.vue';
-import SmallButton from './button/Small.vue';
-import Links from './Links.vue';
-import Separator from './Separator.vue';
+import LargeButton from '../button/Large.vue';
+import SmallButton from '../button/Small.vue';
+import Links from '../Links.vue';
+import Separator from '../Separator.vue';
 export default Vue.extend({
     name: "PageHeader",
     components: { LargeButton, SmallButton, Separator, Links }
@@ -13,7 +13,7 @@ export default Vue.extend({
 <template>
     <div class="page-header">
         <div class="h-list">
-            <img src="@/assets/svg/Logo.svg" style="width: 50px; height: 50px;" alt="Logo">
+            <img src="~/assets/svg/Logo.svg" style="width: 50px; height: 50px;" alt="Logo">
             <h1>sam rodrigues</h1>
         </div>
         <div class="h-list">
@@ -31,7 +31,7 @@ export default Vue.extend({
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 64px 0px 32px;
+        padding: 64px 0 32px;
         gap: 16px;
         user-select: none;
 

@@ -9,7 +9,7 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-    
+
 })
 </script>
 
@@ -18,7 +18,7 @@ export default Vue.extend({
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0px;
+        padding: 0;
         gap: 16px;
 
         align-self: stretch;

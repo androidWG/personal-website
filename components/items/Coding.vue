@@ -52,11 +52,11 @@ export default Vue.extend({
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 32px;
-  
+
   user-select: none;
-  cursor: pointer;  
+  cursor: pointer;
 
   @include m.title-effects;
 }
@@ -74,7 +74,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
 }
 
@@ -92,7 +92,7 @@ export default Vue.extend({
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 10px;
 }
 

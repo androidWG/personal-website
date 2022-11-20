@@ -6,7 +6,7 @@
       mostly music, apps, websites and UI/UX designs. You can find almost all of
       my recent work on this website.
       <br />
-      Brazilian born but living in Montréal, Canada since Feburary 2022, I’ve
+      Brazilian born but living in Montréal, Canada since February 2022, I’ve
       been programming since 2013, designing since 2018 and making music since
       2020. I love using my projects to learn new technologies, techniques,
       platforms, and of course ideas, and my overall work extends to many more
@@ -75,7 +75,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 32px;
 }
 
@@ -83,7 +83,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 10px;
 }
 </style>

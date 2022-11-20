@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Links from "./Links.vue";
+import Links from "../Links.vue";
 export default Vue.extend({
   components: { Links },});
 </script>
@@ -23,7 +23,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 0px;
+  padding: 32px 0;
   gap: 16px;
 
   background: main.$gray-dark;

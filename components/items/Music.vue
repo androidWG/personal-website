@@ -1,6 +1,6 @@
 <template>
   <div class="music-item">
-    <button class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
+    <div class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
       <img class="cover-img" :src="cover" alt="Album Cover" />
       <div class="cover-btn">
         <PlayPauseButton style="margin: 0 auto" ref="button" />
@@ -8,7 +8,7 @@
           {{ isPlaying || isPlaying ? "stop playing" : "play sample" }}
         </p>
       </div>
-    </button>
+    </div>
     <div class="info">
       <a :href="link" class="main-info">
         <h3 class="list-title">{{ title }}</h3>
@@ -30,10 +30,11 @@
 let timerID = null;
 
 import Vue from "vue";
-import { Howl, Howler } from "howler";
+import {Howl, Howler} from "howler";
 import SmallButton from "../button/Small.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
 import scale from "../scaler.js";
+
 export default Vue.extend({
   props: {
     cover: String,
@@ -86,8 +87,7 @@ export default Vue.extend({
     },
     updateProgress(startTime, finishTime) {
       if (this.sample.playing && this.$refs.button !== undefined) {
-        let progress = scale(startTime, finishTime, 0, 100, Date.now());
-        this.$refs.button.progress = progress;
+        this.$refs.button.progress = scale(startTime, finishTime, 0, 100, Date.now());
       }
     },
   },

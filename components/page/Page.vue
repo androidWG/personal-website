@@ -1,17 +1,19 @@
 <template>
   <div>
-    <page-header />
+    <PageHeader />
     <div class="scroll">
       <slot />
-      <page-footer></page-footer>
+      <PageFooter />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import PageHeader from "~/components/page/PageHeader.vue";
+import PageFooter from "~/components/page/PageFooter.vue";
 export default Vue.extend({
-
+  components: {PageFooter, PageHeader}
 })
 </script>
 
@@ -20,7 +22,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
+    padding: 0;
     gap: 32px;
   }
 
@@ -28,7 +30,4 @@ export default Vue.extend({
     max-width: 768px;
   }
 
-  .wide {
-    max-width: 1200px;
-  }
 </style>

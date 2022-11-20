@@ -40,7 +40,7 @@ export default Vue.extend({
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 5px;
 
   img {
@@ -58,27 +58,6 @@ export default Vue.extend({
     font-weight: 500;
     font-size: 18px;
     text-transform: uppercase;
-  }
-}
-
-.active {
-  color: main.$active;
-  img {
-    filter: brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(2478%) hue-rotate(27deg) brightness(98%) contrast(96%);
-  }
-}
-
-.archived {
-  color: main.$archived;
-  img {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(91%) saturate(3556%) hue-rotate(207deg) brightness(101%) contrast(101%);
-  }
-}
-
-.paused {
-  color: main.$secondary;
-  img {
-    filter: brightness(0) saturate(100%) invert(65%) sepia(78%) saturate(810%) hue-rotate(355deg) brightness(99%) contrast(103%);
   }
 }
 
