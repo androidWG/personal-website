@@ -1,0 +1,33 @@
+@use '@/assets/css/main.scss';
+@use '@/assets/css/_shadows.scss' as shadows;
+
+@mixin effects-hover {
+  color: main.$primary !important;
+  text-shadow: shadows.$hovered;
+}
+
+@mixin effects-active {
+  color: main.$gray-medium !important;
+  text-shadow: shadows.$highlighted;
+}
+
+@mixin title {
+  user-select: none;
+  cursor: pointer;
+  transition-property: color, text-shadow;
+  transition-duration: 0.15s;
+}
+
+@mixin title-effects {
+  &:hover {
+    .list-title {
+      @include effects-hover;
+    }
+  }
+
+  &:active {
+    .list-title {
+      @include effects-active;
+    }
+  }
+}

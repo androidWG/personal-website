@@ -4,7 +4,10 @@ $obviously: obviously-wide, sans-serif;
 
 $background: #000;
 $primary: #F44708;
-$seconday: #FFAE03;
+$secondary: #FFAE03;
+$active: #A4BF05;
+$archived: #2176FF;
+$finished: #FF006E;
 
 $gray-dark: #2E282A;
 $gray-light-dark: #4E484C;
@@ -19,6 +22,7 @@ body {
     color: $gray-very-light;
     font-family: $forma;
     font-weight: 400;
+    font-size: 18px;
     font-style: normal;
 }
 
