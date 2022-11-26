@@ -1,6 +1,6 @@
-index.vue<template>
+<template>
   <Page selected="music">
-    <MusicSection/>
+    <MusicSection :albums="data.albums" :singles="data.singles"/>
   </Page>
 </template>
 
@@ -14,6 +14,13 @@ export default Vue.extend({
   components: {
     MusicSection,
     Page
+  },
+  async asyncData({$content, params}) {
+    const data = await $content("music", params.slug).fetch();
+    console.log(data);
+    return {
+      data
+    }
   }
 })
 </script>
