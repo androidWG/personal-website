@@ -34,6 +34,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @use "@/assets/css/main.scss";
+@use "@/assets/css/_filters.scss" as filters;
 
 .status {
   display: flex;
@@ -61,10 +62,28 @@ export default Vue.extend({
   }
 }
 
+.active {
+  color: main.$active;
+  img {
+    filter: filters.$active;
+  }
+}
+.archived {
+  color: main.$archived;
+  img {
+    filter: filters.$archived;
+  }
+}
 .finished {
   color: main.$finished;
   img {
-    filter: brightness(0) saturate(100%) invert(24%) sepia(100%) saturate(7465%) hue-rotate(328deg) brightness(99%) contrast(105%);
+    filter: filters.$finished;
+  }
+}
+.paused {
+  color: main.$secondary;
+  img {
+    filter: filters.$paused;
   }
 }
 </style>
