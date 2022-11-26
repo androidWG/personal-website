@@ -1,9 +1,9 @@
 <template>
   <div class="music-item">
     <div class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
-      <img class="cover-img" :src="`/covers/${filename}.jpg`" alt="Album Cover" />
+      <img class="cover-img" :src="`/covers/${filename}.jpg`" alt="Album Cover"/>
       <div class="cover-btn">
-        <PlayPauseButton style="margin: 0 auto" ref="button" />
+        <PlayPauseButton style="margin: 0 auto" ref="button"/>
         <p id="play-text">
           {{ isPlaying || isPlaying ? "stop playing" : "play sample" }}
         </p>
@@ -14,12 +14,13 @@
         <h3 class="list-title">{{ title }}</h3>
         <p class="date">{{ date }}</p>
       </a>
-      <div>
+      <div class="links">
         <SmallButton
           v-for="(l, index) in links"
-          :icon="l.icon"
+          :icon="l.platform"
           :link="l.link"
           :key="index"
+          rounded="true"
         />
       </div>
     </div>
@@ -59,7 +60,7 @@ export default Vue.extend({
       isPlaying: false,
     };
   },
-  components: { SmallButton, PlayPauseButton },
+  components: {SmallButton, PlayPauseButton},
   methods: {
     toggle() {
       if (!this.isPlaying) {
@@ -127,6 +128,7 @@ export default Vue.extend({
 
   &:hover {
     box-shadow: shadows.$hovered;
+
     .cover-img {
       filter: brightness(50%);
     }
@@ -193,5 +195,15 @@ export default Vue.extend({
   gap: 4px;
 
   z-index: 2;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  height: fit-content;
 }
 </style>
