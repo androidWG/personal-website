@@ -1,6 +1,6 @@
 <template>
   <Page selected="home">
-    <HomeSection/>
+    <HomeSection :latest-music="latestMusic" :my-software="mySoftware" />
   </Page>
 </template>
 
@@ -14,6 +14,14 @@ export default Vue.extend({
   components: {
     HomeSection,
     Page
+  },
+  async asyncData({$content, params}) {
+    let latestMusic = await $content("home/latest_music", params.slug).fetch();
+    let mySoftware = await $content("home/my_software", params.slug).fetch();
+    return {
+      latestMusic,
+      mySoftware
+    }
   }
 })
 </script>

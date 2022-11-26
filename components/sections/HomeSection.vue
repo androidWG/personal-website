@@ -11,19 +11,20 @@
       <div class="highlight-section">
         <h2>Latest Music</h2>
         <MusicItem
-          cover="/covers/c-system32.jpg"
-          title="C:\System32\media"
-          date="TBD"
+          :filename="latestMusic.filename"
+          :title="latestMusic.title"
+          :date="latestMusic.date"
         />
       </div>
       <div class="highlight-section" style="flex-grow: 1">
         <h2>My Apps</h2>
-        <CodingItem
+        <CodingItem v-for="item in mySoftware.software" :key="item.title"
           :compact="true"
-          title="Discord.fm"
-          dateStart="2021"
-          dateEnd="present">
-          A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord rich presence.
+          :title="item.title"
+          :dateStart="item.dates.start.toString()"
+          :dateEnd="item.dates.finish.toString()"
+          :status="item.status">
+          {{item.description}}
         </CodingItem>
       </div>
     </div>
@@ -40,11 +41,9 @@ export default Vue.extend({
     MusicItem,
     CodingItem,
   },
-  async asyncData({$content, params}) {
-    const items = await $content("home", params.slug)
-    return {
-
-    }
+  props: {
+    latestMusic: Object,
+    mySoftware: Object
   }
 });
 </script>

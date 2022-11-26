@@ -21,7 +21,7 @@
           {{ dateEnd }}
         </div>
         <div class="more-info-list">
-          <ProjectStatus status="active" />
+          <ProjectStatus :status="status" />
         </div>
       </div>
     </div>
@@ -38,6 +38,7 @@ export default Vue.extend({
     dateStart: String,
     dateEnd: String,
     link: String,
+    status: String
   },
 });
 </script>

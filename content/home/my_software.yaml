@@ -1,13 +1,13 @@
 - software:
-    - title: Discord.fm
-      description: A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord Rich Presence.
-      dates:
-        start: 2021
-        finish: present
-      status: active
-    - title: Mergify
-      description: Merge Spotify playlists into one, keeping them automatically updated.
-      dates:
-        start: 2022
-        finish: present
-      status: paused
+  - title: Discord.fm
+    description: A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord Rich Presence.
+    dates:
+      start: 2021
+      finish: present
+    status: active
+  - title: Mergify
+    description: Merge Spotify playlists into one, keeping them automatically updated.
+    dates:
+      start: 2022
+      finish: present
+    status: paused
