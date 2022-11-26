@@ -2,35 +2,36 @@
 @use '@/assets/css/shadows';
 
 $large-size: 31px;
+$small-size: 36px;
 
 .button {
-    transition-property: box-shadow, background, color;
-    transition-duration: 0.15s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-property: box-shadow, background, color;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 
-    border-radius: 16px;
-    background: #00000000;
-    color: main.$gray-light;
-    cursor: pointer;
-    text-decoration: none;
+  border-radius: 16px;
+  background: #00000000;
+  color: main.$gray-light;
+  cursor: pointer;
+  text-decoration: none;
 
-    &:hover {
-        color: main.$gray-very-light;
-        background: main.$gray-light-dark;
-        box-shadow: shadows.$hovered;
-    }
+  &:hover {
+    color: main.$gray-very-light;
+    background: main.$gray-light-dark;
+    box-shadow: shadows.$hovered;
+  }
 
-    &:active {
-        color: main.$gray-very-light;
-        background: main.$gray-medium;
-        box-shadow: shadows.$highlighted;
-    }
+  &:active {
+    color: main.$gray-very-light;
+    background: main.$gray-medium;
+    box-shadow: shadows.$highlighted;
+  }
 }
 
 .selected {
@@ -40,25 +41,29 @@ $large-size: 31px;
 }
 
 .icon {
-    width: $large-size;
-    height: $large-size;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  width: $large-size;
+  height: $large-size;
 }
 
 .text {
-    user-select: none;
+  user-select: none;
 
-    height: $large-size;
-    margin: 0;
-    font-family: main.$mono;
-    font-weight: 400;
+  height: $large-size;
+  margin: 0;
+  font-family: main.$mono;
+  font-weight: 400;
 }
 
 .large {
-    font-size: 24px;
-    padding: 16px 32px;
+  font-size: 24px;
+  padding: 16px 32px;
 }
 
+.small {
+  font-size: 21px;
+  padding: 14px 14px;
+}
+
+.rounded {
+  border-radius: 128px;
+}
