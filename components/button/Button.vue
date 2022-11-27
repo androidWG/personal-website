@@ -43,6 +43,28 @@ $font-small: 21px;
 $h-large: 63px;
 $h-small: 52px;
 
+@mixin icon-base($padding) {
+  height: $icon;
+  aspect-ratio: 1 / 1;
+
+  &:first-of-type {
+    margin-left: $padding - icon.$pad;
+  }
+
+  &:only-child {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin text-base($padding) {
+  margin-right: $padding;
+
+  &:only-child {
+    margin: $padding;
+  }
+}
+
 .button {
   transition-property: box-shadow, background, color;
   transition-duration: 0.15s;
@@ -86,24 +108,11 @@ $h-small: 52px;
 }
 
 .icon {
-  height: $icon;
-  aspect-ratio: 1 / 1;
-
-  &:first-of-type {
-    margin-left: $total-pad-large - icon.$pad;
-  }
-
-  &:only-child {
-    margin: 0;
-  }
+  @include icon-base($total-pad-large);
 }
 
 .text {
-  margin-right: $total-pad-large;
-
-  &:only-child {
-    margin: $total-pad-large;
-  }
+  @include text-base($total-pad-large);
 }
 
 // Effectors
@@ -113,24 +122,11 @@ $h-small: 52px;
   min-width: $h-small;
 
   .icon {
-    height: $icon;
-    aspect-ratio: 1 / 1;
-
-    &:first-of-type {
-      margin-left: $total-pad-small - icon.$pad;
-    }
-
-    &:only-child {
-      margin: 0;
-    }
+    @include icon-base($total-pad-small);
   }
 
   .text {
-    margin-right: $total-pad-small;
-
-    &:only-child {
-      margin: $total-pad-small;
-    }
+    @include text-base($total-pad-small);
   }
 }
 
