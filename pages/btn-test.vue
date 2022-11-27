@@ -1,37 +1,62 @@
 <template>
   <div>
     <h2>Large Buttons</h2>
+    <h3>not rounded</h3>
     <div class="container">
-      <LargeButton text="Test" icon="github"></LargeButton>
-      <LargeButton icon="github"></LargeButton>
-      <LargeButton text="Test"></LargeButton>
+      <Button text="Test" icon="github"></Button>
+      <Button icon="github"></Button>
+      <Button text="Test"></Button>
+    </div>
+    <div class="container">
+      <Button :selected="true" text="Test" icon="github"></Button>
+      <Button :selected="true" icon="github"></Button>
+      <Button :selected="true" text="Test"></Button>
+    </div>
+    <h3>rounded</h3>
+    <div class="container">
+      <Button :rounded="true" text="Test" icon="github"></Button>
+      <Button :rounded="true" icon="github"></Button>
+      <Button :rounded="true" text="Test"></Button>
+    </div>
+    <div class="container">
+      <Button :rounded="true" :selected="true" text="Test" icon="github"></Button>
+      <Button :rounded="true" :selected="true" icon="github"></Button>
+      <Button :rounded="true" :selected="true" text="Test"></Button>
     </div>
     <h2>Small Buttons</h2>
     <h3>not rounded</h3>
     <div class="container">
-      <SmallButton :rounded="false" icon="github"></SmallButton>
-      <SmallButton :rounded="false" text="Test" icon="github"></SmallButton>
-      <SmallButton :rounded="false" text="Test"></SmallButton>
+      <Button :small="true" :rounded="false" icon="github"></Button>
+      <Button :small="true" :rounded="false" text="Test" icon="github"></Button>
+      <Button :small="true" :rounded="false" text="Test"></Button>
+    </div>
+    <div class="container">
+      <Button :small="true" :selected="true" :rounded="false" icon="github"></Button>
+      <Button :small="true" :selected="true" :rounded="false" text="Test" icon="github"></Button>
+      <Button :small="true" :selected="true" :rounded="false" text="Test"></Button>
     </div>
     <h3>rounded</h3>
     <div class="container">
-      <SmallButton :rounded="true" icon="github"></SmallButton>
-      <SmallButton :rounded="true" text="Test" icon="github"></SmallButton>
-      <SmallButton :rounded="true" text="Test"></SmallButton>
+      <Button :small="true" :rounded="true" icon="github"></Button>
+      <Button :small="true" :rounded="true" text="Test" icon="github"></Button>
+      <Button :small="true" :rounded="true" text="Test"></Button>
+    </div>
+    <div class="container">
+      <Button :small="true" :selected="true" :rounded="true" icon="github"></Button>
+      <Button :small="true" :selected="true" :rounded="true" text="Test" icon="github"></Button>
+      <Button :small="true" :selected="true" :rounded="true" text="Test"></Button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import SmallButton from "~/components/button/SmallButton.vue";
-import LargeButton from "~/components/button/LargeButton.vue";
+import Button from "~/components/button/Button.vue";
 
 export default Vue.extend({
   name: "ButtonTest",
   components: {
-    LargeButton,
-    SmallButton,
+    Button,
   },
 });
 </script>
