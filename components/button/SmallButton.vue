@@ -13,7 +13,7 @@ export default Vue.extend({
 
 <template>
   <a class="small button" :class="{rounded: rounded}" :href="link">
-    <img v-if="icon !== undefined" class="icon" :src="require(`@/assets/icons/${icon}.svg`)" alt="">
+    <img v-if="icon !== undefined" class="icon" :src="require(`@/assets/icons/white/${icon}.svg`)" alt="">
     <p v-if="text !== undefined" class="text">{{ text }}</p>
   </a>
 </template>

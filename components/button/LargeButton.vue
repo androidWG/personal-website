@@ -13,8 +13,8 @@ export default Vue.extend({
 
 <template>
   <a class="large button" :class="{selected: selected}" :href="link">
-    <img v-if="icon !== undefined" class="icon" :src="require(`@/assets/icons/${icon}.svg`)" alt="">
-    <p v-if="text !== undefined" class="text">{{ text }}</p>
+    <img v-if="icon !== undefined" class="icon" :src="require(`@/assets/icons/white/${icon}.svg`)" alt="">
+    <p v-if="text !== undefined" class="text" :class="{'text-only': icon === undefined}">{{ text }}</p>
   </a>
 </template>
 
