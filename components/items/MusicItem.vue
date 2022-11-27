@@ -1,7 +1,11 @@
 <template>
   <div class="music-item">
     <div class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
-      <img class="cover-img" :src="`/covers/${filename}.jpg`" alt="Album Cover"/>
+      <img
+        class="cover-img"
+        :src="`/covers/${filename}.jpg`"
+        alt="Album Cover"
+      />
       <div class="cover-btn">
         <PlayPauseButton style="margin: 0 auto" ref="button"/>
         <p id="play-text">
@@ -15,8 +19,9 @@
         <p class="date">{{ date }}</p>
       </a>
       <div class="links">
-        <SmallButton
+        <Button
           v-for="(l, index) in links"
+          :small="true"
           :icon="l.platform"
           :link="l.link"
           :key="index"
@@ -32,7 +37,7 @@ let timerID = null;
 
 import Vue from "vue";
 import {Howl, Howler} from "howler";
-import SmallButton from "../button/SmallButton.vue";
+import Button from "../button/Button.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
 import scale from "../scaler.js";
 
@@ -60,7 +65,7 @@ export default Vue.extend({
       isPlaying: false,
     };
   },
-  components: {SmallButton, PlayPauseButton},
+  components: {Button, PlayPauseButton},
   methods: {
     toggle() {
       if (!this.isPlaying) {
@@ -88,7 +93,13 @@ export default Vue.extend({
     },
     updateProgress(startTime, finishTime) {
       if (this.sample.playing && this.$refs.button !== undefined) {
-        this.$refs.button.progress = scale(startTime, finishTime, 0, 100, Date.now());
+        this.$refs.button.progress = scale(
+          startTime,
+          finishTime,
+          0,
+          100,
+          Date.now()
+        );
       }
     },
   },

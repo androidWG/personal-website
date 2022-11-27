@@ -1,32 +1,38 @@
 <template>
   <div class="h-list">
-    <SmallButton
+    <Button
+      :small="true"
       text="sam.roliveira@pm.me"
       icon="mail"
       link="mailto:sam.roliveira@pm.me"
     />
-    <Separator />
-    <SmallButton
+    <Separator/>
+    <Button
+      :small="true"
       :rounded="true"
       icon="github"
       link="https://github.com/androidWG"
     />
-    <SmallButton
+    <Button
+      :small="true"
       :rounded="true"
       icon="dribbble"
       link="https://dribbble.com/androidWG"
     />
-    <SmallButton
+    <Button
+      :small="true"
       :rounded="true"
       icon="soundcloud"
       link="https://soundcloud.com/androidWG"
     />
-    <SmallButton
+    <Button
+      :small="true"
       :rounded="true"
       icon="bandcamp"
       link="https://androidwg.bandcamp.com"
     />
-    <SmallButton
+    <Button
+      :small="true"
       :rounded="true"
       icon="linkedin"
       link="https://linkedin.com/in/sam-rodrigues-o"
@@ -36,12 +42,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-import SmallButton from "./button/SmallButton.vue";
-import LargeButton from "./button/LargeButton.vue";
+import Button from "./button/Button.vue";
+
 export default Vue.extend({
   components: {
-    LargeButton,
-    SmallButton,
+    Button,
   },
 });
 </script>
