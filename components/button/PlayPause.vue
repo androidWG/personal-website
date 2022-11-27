@@ -2,7 +2,7 @@
   <div class="play-icon">
     <img
       v-if="!isPlaying"
-      src="@/assets/icons/play.svg"
+      src="@/assets/icons/white/play.svg"
       alt="Play sample"
       style="filter: invert(100%)"
     />
@@ -31,7 +31,7 @@
         ></circle>
       </svg>
       <img
-        src="@/assets/icons/stop.svg"
+        src="@/assets/icons/white/stop.svg"
         alt="Stop playing sample"
         style="width: 70%; height: 70%"
       />
@@ -41,6 +41,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
   data() {
     return {
@@ -86,9 +87,11 @@ export default Vue.extend({
     stroke-width: 6;
     fill: none;
   }
+
   circle:nth-of-type(1) {
     stroke: main.$gray-medium;
   }
+
   circle:nth-of-type(2) {
     transition: stroke-dashoffset 0.3s linear;
 

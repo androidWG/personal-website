@@ -15,7 +15,7 @@
         <div class="more-info-list dates">
           {{ dateStart }}
           <img
-            src="@/assets/icons/arrow-right.svg"
+            src="@/assets/icons/white/arrow-right.svg"
             alt="Arrow pointing right"
           />
           {{ dateEnd }}

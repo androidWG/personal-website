@@ -1,14 +1,15 @@
 <template>
   <div class="status" :class="status">
-    <img :src="require(`@/assets/icons/${icon}.svg`)" alt="Icon">
+    <img :src="require(`@/assets/icons/black/${icon}.svg`)" alt="Icon">
     <p class="text">
-      {{status}}
+      {{ status }}
     </p>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
   props: {
     status: String,
@@ -64,24 +65,31 @@ export default Vue.extend({
 
 .active {
   color: main.$active;
+
   img {
     filter: filters.$active;
   }
 }
+
 .archived {
   color: main.$archived;
+
   img {
     filter: filters.$archived;
   }
 }
+
 .finished {
   color: main.$finished;
+
   img {
     filter: filters.$finished;
   }
 }
+
 .paused {
   color: main.$secondary;
+
   img {
     filter: filters.$paused;
   }
