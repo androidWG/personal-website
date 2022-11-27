@@ -17,7 +17,6 @@ export default Vue.extend({
   },
   async asyncData({$content, params}) {
     const data = await $content("music", params.slug).fetch();
-    console.log(data);
     return {
       data
     }

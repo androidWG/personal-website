@@ -8,20 +8,20 @@
     />
     <div class="info">
       <h3 class="list-title">
-        {{title}}
+        {{ title }}
       </h3>
-      <slot class="desc" />
+      <slot class="desc"/>
       <div class="more-info">
         <div class="more-info-list dates">
           {{ dateStart }}
           <img
-            src="@/assets/icons/arrow right.svg"
+            src="@/assets/icons/arrow-right.svg"
             alt="Arrow pointing right"
           />
           {{ dateEnd }}
         </div>
         <div class="more-info-list">
-          <ProjectStatus :status="status" />
+          <ProjectStatus :status="status"/>
         </div>
       </div>
     </div>
@@ -31,6 +31,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
   props: {
     compact: Boolean,

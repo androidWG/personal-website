@@ -20,7 +20,7 @@
           :icon="l.platform"
           :link="l.link"
           :key="index"
-          rounded="true"
+          :rounded="true"
         />
       </div>
     </div>
