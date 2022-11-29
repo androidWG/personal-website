@@ -18,14 +18,20 @@
       <p class="text">{{ text }}</p>
     </a>
     <div v-show="menuOpen" class="content" ref="content">
-      <a class="dropdown-link button" v-for="a in dropdownList" :href="a.link">
+      <a
+        class="dropdown-link button"
+        v-for="a in dropdownList"
+        :href="a.link"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <img
           class="icon"
           :src="require(`@/assets/icons/white/${a.icon}.svg`)"
           :alt="`${a.text} icon`"
         />
-        <p class="text">{{ a.text }}</p></a
-      >
+        <p class="text">{{ a.text }}</p>
+      </a>
     </div>
   </div>
 </template>

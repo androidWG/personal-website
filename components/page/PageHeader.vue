@@ -20,11 +20,11 @@ export default Vue.extend({
       <h1>sam rodrigues</h1>
     </div>
     <div class="h-list">
-      <Button :selected="selected==='home'" text="Home" link="/" icon="home" ref="home-btn"/>
+      <Button :new-tab="false" :selected="selected==='home'" text="Home" link="/" icon="home" ref="home-btn"/>
       <Separator/>
-      <Button :selected="selected==='music'" text="Music" link="/music" ref="music-btn"/>
-      <Button :selected="selected==='coding'" text="Coding" ref="coding-btn"/>
-      <Button :selected="selected==='design'" text="Design" ref="design-btn"/>
+      <Button :new-tab="false" :selected="selected==='music'" text="Music" link="/music" ref="music-btn"/>
+      <Button :new-tab="false" :selected="selected==='coding'" text="Coding" ref="coding-btn"/>
+      <Button :new-tab="false" :selected="selected==='design'" text="Design" ref="design-btn"/>
     </div>
   </div>
 </template>

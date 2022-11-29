@@ -3,6 +3,8 @@
     class="button"
     :class="{ rounded: rounded, selected: selected, small: small }"
     :href="link"
+    :target="'_blank' ? newTab : ''"
+    :rel="'noreferrer noopener'? newTab : ''"
   >
     <img
       v-if="icon !== undefined"
@@ -25,6 +27,10 @@ export default Vue.extend({
     small: Boolean,
     selected: Boolean,
     rounded: Boolean,
+    newTab: {
+      type: Boolean,
+      default: true
+    }
   },
 });
 </script>
