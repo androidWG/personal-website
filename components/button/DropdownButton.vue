@@ -64,7 +64,7 @@ export default Vue.extend({
 @use "./button.scss" as btn;
 
 .button {
-  min-width: 170px;
+  width: fit-content;
 }
 
 .open {
@@ -96,6 +96,7 @@ export default Vue.extend({
   font-size: 18px;
 
   height: fit-content;
+  width: 100%;
 
   p {
     margin: 12px 16px 12px 0;
@@ -106,8 +107,16 @@ export default Vue.extend({
     margin-left: 8px;
   }
 
+  &:first-child {
+    border-radius: 0 btn.$radius 0 0;
+  }
+
   &:last-child {
     border-radius: 0 0 btn.$radius btn.$radius;
+  }
+
+  &:only-child {
+    border-radius: 0 btn.$radius btn.$radius btn.$radius;
   }
 }
 </style>
