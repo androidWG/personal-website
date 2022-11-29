@@ -6,6 +6,7 @@
       <Button text="Test" icon="github"></Button>
       <Button icon="github"></Button>
       <Button text="Test"></Button>
+      <DropdownButton text="Test" :dropdown-list="[{link: '#', icon:'dribbble', text: 'Dribbble'}]"></DropdownButton>
     </div>
     <div class="container">
       <Button :selected="true" text="Test" icon="github"></Button>
@@ -17,6 +18,7 @@
       <Button :rounded="true" text="Test" icon="github"></Button>
       <Button :rounded="true" icon="github"></Button>
       <Button :rounded="true" text="Test"></Button>
+      <DropdownButton text="Test" :dropdown-list="[{link: '#', icon:'dribbble', text: 'Dribbble'}]"></DropdownButton>
     </div>
     <div class="container">
       <Button :rounded="true" :selected="true" text="Test" icon="github"></Button>
@@ -26,9 +28,11 @@
     <h2>Small Buttons</h2>
     <h3>not rounded</h3>
     <div class="container">
-      <Button :small="true" :rounded="false" icon="github"></Button>
-      <Button :small="true" :rounded="false" text="Test" icon="github"></Button>
-      <Button :small="true" :rounded="false" text="Test"></Button>
+      <Button :small="true" icon="github"></Button>
+      <Button :small="true" text="Test" icon="github"></Button>
+      <Button :small="true" text="Test"></Button>
+      <DropdownButton :small="true" text="Test"
+                      :dropdown-list="[{link: '#', icon:'dribbble', text: 'Dribbble'}]"></DropdownButton>
     </div>
     <div class="container">
       <Button :small="true" :selected="true" :rounded="false" icon="github"></Button>
@@ -40,6 +44,8 @@
       <Button :small="true" :rounded="true" icon="github"></Button>
       <Button :small="true" :rounded="true" text="Test" icon="github"></Button>
       <Button :small="true" :rounded="true" text="Test"></Button>
+      <DropdownButton :small="true" :rounded="true" text="Test"
+                      :dropdown-list="[{link: '#', icon:'dribbble', text: 'Dribbble'}]"></DropdownButton>
     </div>
     <div class="container">
       <Button :small="true" :selected="true" :rounded="true" icon="github"></Button>
@@ -52,10 +58,12 @@
 <script lang="ts">
 import Vue from "vue";
 import Button from "~/components/button/Button.vue";
+import DropdownButton from "~/components/button/DropdownButton.vue";
 
 export default Vue.extend({
   name: "ButtonTest",
   components: {
+    DropdownButton,
     Button,
   },
 });
