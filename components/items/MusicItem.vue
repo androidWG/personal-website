@@ -14,39 +14,49 @@
       </div>
     </div>
     <div class="info">
-      <a :href="link" class="main-info">
+      <a :href="onClick" class="main-info">
         <h3 class="list-title">{{ title }}</h3>
-        <p class="date">{{ date }}</p>
+        <p class="date">{{ dateFormatted }}</p>
       </a>
       <div class="links">
         <Button
-          v-for="(l, index) in links"
+          v-for="(l, index) in linksTruncated.primary"
           :small="true"
           :icon="l.platform"
           :link="l.link"
           :key="index"
           :rounded="true"
         />
+        <DropdownButton
+          v-if="linksTruncated.extra.length !== 0"
+          style="width: 100%"
+          :small="true"
+          icon="add"
+          text="More"
+          :dropdown-list="linksTruncated.extra"
+        >
+        </DropdownButton>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-let timerID = null;
-
+import DropdownButton from "~/components/button/DropdownButton";
 import Vue from "vue";
 import {Howl, Howler} from "howler";
 import Button from "../button/Button.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
 import scale from "../scaler.js";
 
+let timerID = null;
+
 export default Vue.extend({
   props: {
     filename: String,
     title: String,
     date: String,
-    link: String,
+    onClick: String,
     links: Array,
   },
   setup(props) {
@@ -65,7 +75,41 @@ export default Vue.extend({
       isPlaying: false,
     };
   },
-  components: {Button, PlayPauseButton},
+  computed: {
+    dateFormatted() {
+      if (this.date === "TBD") {
+        return this.date;
+      } else {
+        let parsedDate = new Date(this.date);
+        return parsedDate.toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        });
+      }
+    },
+    linksTruncated() {
+      let primary = [];
+      let extra = [];
+      if (this.links !== undefined) {
+        primary = this.links.slice(0, 4);
+        extra = this.links.slice(5, this.links.length);
+
+        if (extra.length > 0) {
+          for (let i = 0; i < extra.length; i++) {
+            let l = extra[i];
+            let text = l.platform.charAt(0).toUpperCase() + l.platform.slice(1);
+            if (l.name !== undefined) {
+              text = l.name;
+            }
+            extra[i] = {icon: l.platform, text: text, link: l.link};
+          }
+        }
+      }
+
+      return {primary: primary, extra: extra};
+    },
+  },
+  components: {DropdownButton, Button, PlayPauseButton},
   methods: {
     toggle() {
       if (!this.isPlaying) {
@@ -215,6 +259,7 @@ export default Vue.extend({
   align-items: center;
   gap: 4px;
 
+  min-height: 56px;
   height: fit-content;
 }
 </style>
