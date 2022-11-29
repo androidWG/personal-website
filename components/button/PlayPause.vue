@@ -2,15 +2,12 @@
   <div class="play-icon">
     <img
       v-if="!isPlaying"
+      class="icon"
       src="@/assets/icons/white/play.svg"
       alt="Play sample"
-      style="filter: invert(100%)"
     />
     <div v-if="isPlaying" class="stop-btn">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
         <circle
           :cx="ringSize"
           :cy="ringSize"
@@ -31,9 +28,9 @@
         ></circle>
       </svg>
       <img
+        class="icon"
         src="@/assets/icons/white/stop.svg"
         alt="Stop playing sample"
-        style="width: 70%; height: 70%"
       />
     </div>
   </div>
@@ -62,17 +59,20 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "@/assets/css/main.scss";
+
+.icon {
+  aspect-ratio: 1 / 1;
+}
 
 .play-icon {
   width: 64px;
   height: 64px;
   position: relative;
 
-  img {
-    width: 100%;
-    height: 100%;
+  .icon {
+    width: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
