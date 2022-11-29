@@ -11,6 +11,11 @@ import Page from '~/components/page/Page.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
+  head() {
+    return {
+      title: "Sam Rodrigues | Coding"
+    }
+  },
   components: {
     HomeSection,
     Page

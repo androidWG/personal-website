@@ -11,6 +11,11 @@ import Page from '~/components/page/Page.vue';
 
 export default Vue.extend({
   name: 'MusicPage',
+  head() {
+    return {
+      title: "Sam Rodrigues | Music"
+    }
+  },
   components: {
     MusicSection,
     Page
