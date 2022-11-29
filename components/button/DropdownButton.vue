@@ -61,6 +61,7 @@ export default Vue.extend({
 <style scoped lang="scss" src="./button.scss"></style>
 <style scoped lang="scss">
 @use "@/assets/css/main";
+@use "@/assets/css/_shadows.scss" as shadows;
 @use "./button.scss" as btn;
 
 .button {
@@ -69,17 +70,21 @@ export default Vue.extend({
 
 .open {
   border-radius: btn.$radius btn.$radius 0 0;
+  background-color: main.$gray-light-dark;
 }
 
 .dropdown {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
 }
 
 .content {
   min-width: fit-content;
   z-index: 1;
+  position: absolute;
+
+  border-radius: 0 btn.$radius btn.$radius btn.$radius;
+  box-shadow: shadows.$cover-default;
 
   a {
     padding: 12px 16px;
