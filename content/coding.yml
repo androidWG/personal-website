@@ -26,6 +26,7 @@ projects:
   - name: Mergify
     description: Merge Spotify playlists into one, keeping them automatically updated.
     status: paused
+    image: mergify.svg
     using:
       - python
       - django

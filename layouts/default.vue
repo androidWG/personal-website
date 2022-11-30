@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :selected="$route.name"/>
-    <div class="scroll">
+    <div class="scroll" :class="{ skinny: skinny }">
       <div class="section">
         <Nuxt/>
       </div>
@@ -19,10 +19,10 @@ export default Vue.extend({
   components: {Header, Footer},
   data() {
     return {
-      selected: "home"
-    }
+      skinny: false,
+    };
   },
-})
+});
 </script>
 
 <style scoped>
@@ -34,10 +34,6 @@ export default Vue.extend({
   align-items: center;
   padding: 0;
   gap: 32px;
-}
-
-.skinny {
-  max-width: 768px;
 }
 
 .section {

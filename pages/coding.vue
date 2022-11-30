@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="skinny group">
     <h2>Coding Projects</h2>
-    <div class="group">
+    <div>
       <CodingItem
+        class="item"
         v-for="c in data.projects"
         :title="c.name"
         :status="c.status"
@@ -35,9 +36,12 @@ export default Vue.extend({
     return {
       data,
     };
-  },
-  created() {
-    this.$emit('setSkinny', true);
   }
 });
 </script>
+
+<style scoped>
+.item {
+  margin-bottom: 32px;
+}
+</style>
