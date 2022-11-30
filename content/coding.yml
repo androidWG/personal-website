@@ -19,7 +19,7 @@ projects:
       - python
     for:
       - windows
-      - mac
+      - apple
     dates:
       start: 2021
       finish: present
@@ -50,7 +50,7 @@ projects:
     status: archived
     image: tokigo.png
     using:
-      - C#
+      - c#
     for:
       - android
     dates:
@@ -61,7 +61,7 @@ projects:
     status: finished
     using:
       - html5
-      - css
+      - css3
     for:
       - web
     dates:

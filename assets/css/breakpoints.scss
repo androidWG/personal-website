@@ -1,0 +1,15 @@
+$mobile: 560px;
+
+.compact {
+  display: none;
+  @media(max-width: 560px) {
+    display: inherit;
+  }
+}
+
+.full {
+  display: inherit;
+  @media(max-width: 560px) {
+    display: none;
+  }
+}
