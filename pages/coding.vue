@@ -11,7 +11,7 @@
         :date-start="c.dates.start"
         :date-end="c.dates.finish"
         :using="c.using"
-        :for="c.for"
+        :platforms="c.for"
         :key="c.name"
       >
         {{ c.description }}
