@@ -50,7 +50,7 @@ projects:
     status: archived
     image: tokigo.png
     using:
-      - c#
+      - c-sharp
     for:
       - android
     dates:
