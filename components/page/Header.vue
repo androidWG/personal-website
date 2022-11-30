@@ -6,7 +6,7 @@
         style="width: 50px; height: 50px"
         alt="Logo"
       />
-      <h1>sam rodrigues</h1>
+      <h1 style="transform: translate(0, -10px)">sam rodrigues</h1>
     </div>
     <div class="h-list">
       <Button

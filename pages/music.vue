@@ -41,7 +41,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-$gap: 16px;
+$gap: 24px;
 $item: 347px; //size of the music item element
 $page-pad: 96px * 2;
 
@@ -66,7 +66,7 @@ $two-items: ($item * 2) + $gap;
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: $gap;
+  gap: 32px;
   align-self: stretch;
 }
 
@@ -77,6 +77,6 @@ $two-items: ($item * 2) + $gap;
   flex-wrap: wrap;
 
   padding: 0;
-  gap: 16px;
+  gap: $gap;
 }
 </style>
