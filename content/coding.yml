@@ -1,0 +1,67 @@
+projects:
+  - name: Personal website
+    description: What you're reading right now! Designed from scratch using Figma and built from the ground up using modern web technologies.
+    status: active
+    image: personal.png
+    using:
+      - vue
+      - nuxt
+      - typescript
+    for:
+      - web
+    dates:
+      start: 2022
+  - name: Discord.fm
+    description: A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord rich presence.
+    status: active
+    image: discord-fm.png
+    using:
+      - python
+    for:
+      - windows
+      - mac
+    dates:
+      start: 2021
+      finish: present
+  - name: Mergify
+    description: Merge Spotify playlists into one, keeping them automatically updated.
+    status: paused
+    using:
+      - python
+      - django
+    for:
+      - web
+    dates:
+      start: 2022
+      finish: present
+  - name: Know Your Music
+    description: Browser-based game where a small section of a song from your library is played and you have to guess the title and artist.
+    status: paused
+    using:
+      - vue
+      - javascript
+    for:
+      - web
+    dates:
+      start: 2021
+  - name: SmartLyrics/Tokigo
+    description: Android lyrics app based on Genius.com made with Xamarin, originally called SmartLyrics but renamed to Tokigo right before being archived.
+    status: archived
+    image: tokigo.png
+    using:
+      - C#
+    for:
+      - android
+    dates:
+      start: 2018
+      finish: 2020
+  - name: WLM Online
+    description: Demo of how a semi-responsive version of the late Windows Live Messenger would look.
+    status: finished
+    using:
+      - html5
+      - css
+    for:
+      - web
+    dates:
+      start: 2019
