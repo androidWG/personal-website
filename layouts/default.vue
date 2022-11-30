@@ -25,7 +25,9 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@use "@/assets/css/breakpoints.scss";
+
 .scroll {
   width: 100%;
 
@@ -39,5 +41,9 @@ export default Vue.extend({
 .section {
   width: fit-content;
   margin: 0 96px;
+
+  @media(max-width: breakpoints.$small) {
+    margin: 0 48px;
+  }
 }
 </style>

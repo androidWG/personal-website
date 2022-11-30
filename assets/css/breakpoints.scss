@@ -1,15 +1,20 @@
-$mobile: 560px;
+$tiny: 0px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$massive: 1200px;
+$gigantic: 1400px;
 
 .compact {
-  display: none;
-  @media(max-width: 560px) {
-    display: inherit;
+  display: none !important;
+  @media(max-width: $small) {
+    display: inherit !important;
   }
 }
 
 .full {
-  display: inherit;
-  @media(max-width: 560px) {
-    display: none;
+  display: inherit !important;
+  @media(max-width: $small) {
+    display: none !important;
   }
 }
