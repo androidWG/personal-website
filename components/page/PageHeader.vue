@@ -23,7 +23,7 @@ export default Vue.extend({
       <Button :new-tab="false" :selected="selected==='home'" text="Home" link="/" icon="home" ref="home-btn"/>
       <Separator/>
       <Button :new-tab="false" :selected="selected==='music'" text="Music" link="/music" ref="music-btn"/>
-      <Button :new-tab="false" :selected="selected==='coding'" text="Coding" ref="coding-btn"/>
+      <Button :new-tab="false" :selected="selected==='coding'" text="Coding" link="/coding" ref="coding-btn"/>
       <Button :new-tab="false" :selected="selected==='design'" text="Design" ref="design-btn"/>
     </div>
   </div>

@@ -1,6 +1,6 @@
 $forma: forma-djr-micro, sans-serif;
-$mono: 'IBM Plex Mono', monospace;
 $obviously: obviously-wide, sans-serif;
+$mono: 'IBM Plex Mono', monospace;
 
 $background: #000;
 $primary: #F44708;
@@ -16,74 +16,74 @@ $gray-light: #CECCCC;
 $gray-very-light: #FEFFFE;
 
 body {
-    margin: 0;
+  margin: 0;
 
-    background-color: $background;
-    color: $gray-very-light;
-    font-family: $forma;
-    font-weight: 400;
-    font-size: 18px;
-    font-style: normal;
+  background-color: $background;
+  color: $gray-very-light;
+  font-family: $forma;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
 
-    font-family: $obviously;
-    font-weight: 660;
-    font-size: 40px;
-    line-height: 63px;
-    letter-spacing: 0.2em;
-    text-transform: lowercase;
+  font-family: $obviously;
+  font-weight: 660;
+  font-size: 40px;
+  line-height: 63px;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
 }
 
 h2 {
-    margin: 0;
+  margin: 0;
 
-    font-family: $forma;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: -0.035em;
+  font-family: $forma;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.035em;
 }
 
 h3 {
-    margin: 0;
+  margin: 0;
 
-    font-family: $forma;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: -0.035em;
+  font-family: $forma;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.035em;
 
-    color: $gray-very-light;
+  color: $gray-very-light;
 }
 
 .date {
-    margin: 0;
+  margin: 0;
 
-    font-family: $forma;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+  font-family: $forma;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 
-    color: $gray-medium;
+  color: $gray-medium;
 }
 
 .clean {
-    outline: none;
-    border: none;
-    padding: 0;
-    margin: 0;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .h-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    gap: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 32px;
 }

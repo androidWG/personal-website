@@ -1,10 +1,10 @@
 <template>
   <a
-    class="button"
     :class="{ rounded: rounded, selected: selected, small: small }"
     :href="link"
-    :target="'_blank' ? newTab : ''"
     :rel="'noreferrer noopener'? newTab : ''"
+    :target="'_blank' ? newTab : ''"
+    class="button"
   >
     <img
       v-if="icon !== undefined"
@@ -21,7 +21,10 @@ import Vue from "vue";
 
 export default Vue.extend({
   props: {
-    link: String,
+    link: {
+      type: String,
+      default: "#"
+    },
     text: String,
     icon: String,
     small: Boolean,
