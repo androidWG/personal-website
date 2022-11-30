@@ -87,3 +87,15 @@ h3 {
   padding: 0;
   gap: 32px;
 }
+
+.group {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+  align-self: stretch;
+
+  margin-bottom: 32px;
+}
