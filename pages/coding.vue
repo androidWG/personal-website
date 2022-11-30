@@ -1,13 +1,11 @@
 <template>
-  <Page>
-    <HomeSection/>
-  </Page>
+  <div>
+    <h2>Coding</h2>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import HomeSection from '~/components/sections/HomeSection.vue';
-import Page from '~/components/page/Page.vue';
+import Vue from 'vue';
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -16,9 +14,5 @@ export default Vue.extend({
       title: "Sam Rodrigues | Coding"
     }
   },
-  components: {
-    HomeSection,
-    Page
-  }
 })
 </script>
