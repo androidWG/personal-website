@@ -31,6 +31,11 @@ import MusicItem from '~/components/items/MusicItem.vue';
 
 export default Vue.extend({
   components: {MusicItem},
+  head() {
+    return {
+      title: "Sam Rodrigues | Music"
+    }
+  },
   async asyncData({$content, params}) {
     const data = await $content("music", params.slug).fetch();
     return {
@@ -58,16 +63,6 @@ $two-items: ($item * 2) + $gap;
   @media (min-width: $three-items + $page-pad) {
     width: $three-items;
   }
-}
-
-.group {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  gap: 32px;
-  align-self: stretch;
 }
 
 .list {
