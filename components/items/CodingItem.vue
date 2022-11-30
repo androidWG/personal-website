@@ -105,7 +105,7 @@ export default Vue.extend({
   width: 100%;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0;
   gap: 8px;
@@ -121,17 +121,9 @@ export default Vue.extend({
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
 
-  @media(max-width: breakpoints.$mobile) {
+  @media(max-width: breakpoints.$small) {
     display: none;
   }
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  gap: 4px;
 }
 
 .dates {
