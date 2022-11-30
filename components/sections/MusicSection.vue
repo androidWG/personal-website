@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div class="music-group">
+  <div class="container">
+    <div class="group">
       <h2>Albums and EPs</h2>
-      <div>
+      <div class="list">
         <MusicItem v-for="a in albums"
                    :key="a.title"
                    :title="a.title"
@@ -11,14 +11,16 @@
                    :links="a.links"/>
       </div>
     </div>
-    <div class="music-group">
+    <div class="group">
       <h2>Singles</h2>
-      <MusicItem v-for="s in singles"
-                 :key="s.title"
-                 :title="s.title"
-                 :filename="s.filename"
-                 :date="s.date"
-                 :links="s.links"/>
+      <div class="list">
+        <MusicItem v-for="s in singles"
+                   :key="s.title"
+                   :title="s.title"
+                   :filename="s.filename"
+                   :date="s.date"
+                   :links="s.links"/>
+      </div>
     </div>
   </div>
 </template>
@@ -29,7 +31,6 @@ import MusicItem from '~/components/items/MusicItem.vue';
 
 export default Vue.extend({
   components: {MusicItem},
-
   props: {
     albums: Array,
     singles: Array
@@ -37,14 +38,43 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.music-group {
+<style scoped lang="scss">
+$gap: 16px;
+$item: 347px; //size of the music item element
+$page-pad: 96px * 2;
+
+$three-items: ($item * 3) + ($gap * 2);
+$two-items: ($item * 2) + $gap;
+
+.container {
+  @media (min-width: $item + $page-pad) {
+    width: $item;
+  }
+  @media (min-width: $two-items + $page-pad) {
+    width: $two-items;
+  }
+  @media (min-width: $three-items + $page-pad) {
+    width: $three-items;
+  }
+}
+
+.group {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 16px;
-
+  gap: $gap;
   align-self: stretch;
+}
+
+.list {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding: 0;
+  gap: 16px;
 }
 </style>
