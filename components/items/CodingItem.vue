@@ -1,9 +1,9 @@
 <template>
-  <a :href="link" class="item">
+  <a :href="link" class="container">
     <img
-      v-if="!compact"
+      v-if="!compact && image !== undefined"
       class="icon"
-      src="/project-icons/discord-fm.png"
+      :src="`/projects/${image}`"
       alt="Project icon"
     />
     <div class="info">
@@ -14,11 +14,13 @@
       <div class="more-info">
         <div class="more-info-list dates">
           {{ dateStart }}
-          <img
-            src="@/assets/icons/white/arrow-right.svg"
-            alt="Arrow pointing right"
-          />
-          {{ dateEnd }}
+          <div class="more-info-list" v-if="dateEnd !== undefined">
+            <img
+              src="@/assets/icons/white/arrow-right.svg"
+              alt="Arrow pointing right"
+            />
+            {{ dateEnd }}
+          </div>
         </div>
         <div class="more-info-list">
           <ProjectStatus :status="status"/>
@@ -35,10 +37,13 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     compact: Boolean,
-    title: String,
-    dateStart: String,
-    dateEnd: String,
     link: String,
+    title: String,
+    image: String,
+    using: Array,
+    for: Array,
+    dateStart: [String, Number],
+    dateEnd: [String, Number],
     status: String
   },
 });
@@ -49,7 +54,9 @@ export default Vue.extend({
 @use "@/assets/css/_mixins.scss" as m;
 @use "@/assets/css/_shadows.scss" as shadows;
 
-.item {
+.container {
+  width: 100%;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -61,6 +68,10 @@ export default Vue.extend({
   cursor: pointer;
 
   @include m.title-effects;
+}
+
+.info {
+  width: 100%;
 }
 
 .list-title {

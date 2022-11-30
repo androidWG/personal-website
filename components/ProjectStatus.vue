@@ -20,7 +20,7 @@ export default Vue.extend({
         case "active":
           return "play";
         case "archived":
-          return "archive";
+          return "archived";
         case "paused":
           return "pause";
         case "finished":
