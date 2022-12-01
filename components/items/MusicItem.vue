@@ -47,7 +47,7 @@ import Vue from "vue";
 import {Howl, Howler} from "howler";
 import Button from "../button/Button.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
-import scale from "../scaler.js";
+import {map} from "../math.js";
 
 let timerID = null;
 
@@ -137,7 +137,7 @@ export default Vue.extend({
     },
     updateProgress(startTime, finishTime) {
       if (this.sample.playing && this.$refs.button !== undefined) {
-        this.$refs.button.progress = scale(
+        this.$refs.button.progress = map(
           startTime,
           finishTime,
           0,

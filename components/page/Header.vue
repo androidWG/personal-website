@@ -1,47 +1,51 @@
 <template>
   <div class="header">
     <div class="title">
-      <img
-        src="~/assets/svg/Logo.svg"
-        alt="Logo"
-      />
+      <img src="~/assets/svg/Logo.svg" alt="Logo"/>
       <h1>sam rodrigues</h1>
     </div>
     <div class="menu">
-      <Button
-        :new-tab="false"
-        :selected="selected === 'index'"
-        text="Home"
-        link="/"
-        icon="home"
-        ref="home-btn"
-      />
-      <Separator/>
-      <Button
-        :new-tab="false"
-        :selected="selected === 'music'"
-        text="Music"
-        link="/music"
-        ref="music-btn"
-      />
-      <Button
-        :new-tab="false"
-        :selected="selected === 'coding'"
-        text="Coding"
-        link="/coding"
-        ref="coding-btn"
-      />
-      <Button
-        :new-tab="false"
-        :selected="selected === 'design'"
-        text="Design"
-        ref="design-btn"
-      />
+      <div class="overlay">
+        <div ref="edgeLeft" class="edge" id="left" style="opacity: 0"></div>
+        <div ref="edgeRight" class="edge" id="right"></div>
+      </div>
+      <div class="content" ref="scroll" v-on:scroll="updateOverlay">
+        <Button
+          :new-tab="false"
+          :selected="selected === 'index'"
+          text="Home"
+          link="/"
+          icon="home"
+          ref="home-btn"
+        />
+        <Separator/>
+        <Button
+          :new-tab="false"
+          :selected="selected === 'music'"
+          text="Music"
+          link="/music"
+          ref="music-btn"
+        />
+        <Button
+          :new-tab="false"
+          :selected="selected === 'coding'"
+          text="Coding"
+          link="/coding"
+          ref="coding-btn"
+        />
+        <Button
+          :new-tab="false"
+          :selected="selected === 'design'"
+          text="Design"
+          ref="design-btn"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import {map} from "../math";
 import Vue from "vue";
 import Button from "../button/Button.vue";
 import Links from "../Links.vue";
@@ -52,6 +56,25 @@ export default Vue.extend({
   components: {Button, Separator, Links},
   props: {
     selected: String,
+  },
+  methods: {
+    updateOverlay() {
+      let scroll = this.$refs.scroll;
+      let right = this.$refs.edgeRight;
+      let left = this.$refs.edgeLeft;
+
+      let maxGap = 64; //in px
+      let maxScrollLeft = scroll.scrollWidth - scroll.clientWidth;
+
+      left.style.opacity = map(0, maxGap, 0, 1, scroll.scrollLeft);
+      right.style.opacity = map(
+        maxScrollLeft,
+        maxScrollLeft - maxGap,
+        0,
+        1,
+        scroll.scrollLeft
+      );
+    },
   },
 });
 </script>
@@ -68,10 +91,12 @@ export default Vue.extend({
 
 .title {
   width: fit-content;
-  margin: 0 auto 8px;
+  margin: 0 auto 16px;
   display: flex;
   gap: 3vw;
   white-space: nowrap;
+
+  z-index: 3;
 
   img {
     max-width: 50px;
@@ -90,22 +115,54 @@ export default Vue.extend({
 }
 
 .menu {
-  margin: 8px auto;
-  padding: 0 32px;
+  position: relative;
 
-  display: flex;
-  gap: 32px;
-  max-width: fit-content;
-  overflow-x: auto;
-  overflow-y: visible;
-  scrollbar-width: none;
+  .overlay {
+    pointer-events: none;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
 
-  Button {
-    display: inline-block !important;
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 2;
+
+    .edge {
+      width: 64px;
+      height: 100%;
+    }
+
+    #left {
+      background: linear-gradient(90deg, black, #00000000);
+    }
+
+    #right {
+      background: linear-gradient(-90deg, black, #00000000);
+    }
   }
 
-  &::-webkit-scrollbar {
-    display: none;
+  .content {
+    $margin: 64px;
+    margin: -$margin auto;
+    padding: $margin 32px;
+
+    display: flex;
+    gap: 32px;
+    max-width: fit-content;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    z-index: 1;
+
+    Button {
+      display: inline-block !important;
+    }
+
+    // Hide the scrollbar on Chrome and Safari
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 </style>
