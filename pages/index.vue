@@ -2,31 +2,32 @@
   <div class="skinny">
     <h1 id="hello">Hello!</h1>
     <p class="body">
-      I’m Sam Rodrigues, also know online as androidWG. I make many things but mostly music, apps, websites and UI/UX
-      designs. You can find almost all of my recent work on this website.
-      <br/>
-      Brazilian born but living in Montréal, Canada since February 2022, I’ve been programming since 2013, designing
-      since 2018 and making music since 2020. I love using my projects to learn new technologies, techniques, platforms,
-      and of course ideas, and my overall work extends to many more projects that didn’t pass the trial phase.
+      {{ data.body }}
     </p>
 
     <div class="highlights">
       <div class="highlight-section">
         <h2>Latest Music</h2>
         <MusicItem
-          :filename="latestMusic.filename"
-          :title="latestMusic.title"
-          :date="latestMusic.date"
+          :filename="data.latestMusic.filename"
+          :title="data.latestMusic.title"
+          :date="data.latestMusic.date"
         />
       </div>
-      <div class="highlight-section" style="flex-grow: 1">
+      <div class="highlight-section">
         <h2>My Apps</h2>
-        <CodingItem v-for="item in mySoftware.software" :key="item.title"
-                    :compact="true"
-                    :title="item.title"
-                    :dateStart="item.dates.start.toString()"
-                    :dateEnd="item.dates.finish.toString()"
-                    :status="item.status">
+        <CodingItem
+          class="coding-item"
+          v-for="item in data.software"
+          :key="item.name"
+          :compact="true"
+          :title="item.name"
+          :dateStart="item.dates.start"
+          :dateEnd="item.dates.finish"
+          :status="item.status"
+          :using="item.using"
+          :platforms="item.for"
+        >
           {{ item.description }}
         </CodingItem>
       </div>
@@ -45,18 +46,17 @@ export default Vue.extend({
     CodingItem,
   },
   async asyncData({$content, params}) {
-    let latestMusic = await $content("home/latest_music", params.slug).fetch();
-    let mySoftware = await $content("home/my_software", params.slug).fetch();
+    let data = await $content("home", params.slug).fetch();
     return {
-      latestMusic,
-      mySoftware
-    }
-  }
+      data
+    };
+  },
 });
 </script>
 
 <style lang="scss">
 @use "@/assets/css/main.scss";
+@use "@/assets/css/breakpoints.scss";
 
 #hello {
   font-family: main.$obviously;
@@ -78,11 +78,16 @@ export default Vue.extend({
 }
 
 .highlights {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
   gap: 32px;
+
+  @include breakpoints.q-medium {
+    flex-direction: column;
+  }
 }
 
 .highlight-section {
