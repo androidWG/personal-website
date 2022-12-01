@@ -5,6 +5,43 @@ $large: 992px;
 $massive: 1200px;
 $gigantic: 1400px;
 
+@mixin q-tiny {
+  @media(max-width: $tiny) {
+    @content;
+  }
+}
+
+@mixin q-small {
+  @media(max-width: $small) {
+    @content;
+  }
+}
+
+@mixin q-medium {
+  @media(max-width: $medium) {
+    @content;
+  }
+}
+
+@mixin q-large {
+  @media(max-width: $large) {
+    @content;
+  }
+}
+
+@mixin q-massive {
+  @media(max-width: $massive) {
+    @content;
+  }
+}
+
+@mixin q-gigantic {
+  @media(max-width: $gigantic) {
+    @content;
+  }
+}
+
+
 .compact {
   display: none !important;
   @media(max-width: $small) {
