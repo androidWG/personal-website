@@ -1,14 +1,13 @@
 <template>
   <div class="header">
-    <div class="h-list">
+    <div class="title">
       <img
         src="~/assets/svg/Logo.svg"
-        style="width: 50px; height: 50px"
         alt="Logo"
       />
-      <h1 style="transform: translate(0, -10px)">sam rodrigues</h1>
+      <h1>sam rodrigues</h1>
     </div>
-    <div class="h-list">
+    <div class="menu">
       <Button
         :new-tab="false"
         :selected="selected === 'index'"
@@ -58,14 +57,55 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+@use "@/assets/css/breakpoints.scss";
+
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 64px 0 32px;
-  gap: 16px;
   user-select: none;
 
-  width: 100%;
+  max-width: 100%;
+}
+
+.title {
+  width: fit-content;
+  margin: 0 auto 8px;
+  display: flex;
+  gap: 3vw;
+  white-space: nowrap;
+
+  img {
+    max-width: 50px;
+    width: 6vw;
+    aspect-ratio: 1 / 1;
+
+    @include breakpoints.q-small {
+      display: none;
+    }
+  }
+
+  h1 {
+    height: fit-content;
+    transform: translate(0, min(-1.5vw, -8px));
+  }
+}
+
+.menu {
+  margin: 8px auto;
+  padding: 0 32px;
+
+  display: flex;
+  gap: 32px;
+  max-width: fit-content;
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: none;
+
+  Button {
+    display: inline-block !important;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 </style>

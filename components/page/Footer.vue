@@ -1,24 +1,26 @@
 <template>
-  <div class="page-footer">
+  <div class="footer">
     <p id="footer-text">
-      © Sam Rodrigues 2022<br />Using Material Icons <br />Made with Figma,
+      © Sam Rodrigues 2022<br/>Using Material Icons <br/>Made with Figma,
       Vue.js and Nuxt
     </p>
-    <links />
+    <Links/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Links from "../Links.vue";
+
 export default Vue.extend({
-  components: { Links },});
+  components: {Links},
+});
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "@/assets/css/main.scss";
 
-.page-footer {
+.footer {
   width: 100%;
   display: flex;
   flex-direction: column;

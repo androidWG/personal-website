@@ -1,42 +1,34 @@
 <template>
-  <div class="h-list">
+  <div class="links h-list">
     <Button
       :small="true"
       text="sam.roliveira@pm.me"
       icon="mail"
       link="mailto:sam.roliveira@pm.me"
     />
-    <Separator/>
-    <Button
-      :small="true"
-      :rounded="true"
-      icon="github"
-      link="https://github.com/androidWG"
-    />
-    <Button
-      :small="true"
-      :rounded="true"
-      icon="dribbble"
-      link="https://dribbble.com/androidWG"
-    />
-    <Button
-      :small="true"
-      :rounded="true"
-      icon="soundcloud"
-      link="https://soundcloud.com/androidWG"
-    />
-    <Button
-      :small="true"
-      :rounded="true"
-      icon="bandcamp"
-      link="https://androidwg.bandcamp.com"
-    />
-    <Button
-      :small="true"
-      :rounded="true"
-      icon="linkedin"
-      link="https://linkedin.com/in/sam-rodrigues-o"
-    />
+    <div class="sub">
+      <Button :small="true" icon="github" link="https://github.com/androidWG"/>
+      <Button
+        :small="true"
+        icon="dribbble"
+        link="https://dribbble.com/androidWG"
+      />
+      <Button
+        :small="true"
+        icon="soundcloud"
+        link="https://soundcloud.com/androidWG"
+      />
+      <Button
+        :small="true"
+        icon="bandcamp"
+        link="https://androidwg.bandcamp.com"
+      />
+      <Button
+        :small="true"
+        icon="linkedin"
+        link="https://linkedin.com/in/sam-rodrigues-o"
+      />
+    </div>
   </div>
 </template>
 
@@ -50,3 +42,27 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped lang="scss">
+@use "@/assets/css/main.scss";
+@use "@/assets/css/breakpoints.scss";
+
+.links {
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include breakpoints.q-small {
+    gap: 16px;
+  }
+}
+
+.sub {
+  display: flex;
+  width: fit-content;
+  gap: 32px;
+
+  @include breakpoints.q-small {
+    gap: 16px;
+  }
+}
+</style>

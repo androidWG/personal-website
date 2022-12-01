@@ -1,12 +1,13 @@
 <template>
-    <div class="vl"></div>
+  <div class="vl"></div>
 </template>
 
 <style lang="scss">
-    @use '@/assets/css/main.scss';
+@use "@/assets/css/main.scss";
 
-    .vl {
-        border: 1px solid main.$gray-medium;
-        height: 52px;
-    }
+.vl {
+  border: 1px solid main.$gray-medium;
+  height: 52px;
+  width: 0;
+}
 </style>

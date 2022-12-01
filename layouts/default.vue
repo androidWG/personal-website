@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow: clip">
     <Header :selected="$route.name"/>
     <div class="scroll" :class="{ skinny: skinny }">
       <div class="section">
@@ -41,6 +41,10 @@ export default Vue.extend({
 .section {
   width: fit-content;
   margin: 0 96px;
+
+  @media(max-width: breakpoints.$medium) {
+    margin: 0 64px;
+  }
 
   @media(max-width: breakpoints.$small) {
     margin: 0 48px;

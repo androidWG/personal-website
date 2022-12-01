@@ -41,8 +41,11 @@ $h-small: 52px;
 
   height: $h-large;
   min-width: $h-large;
+  width: fit-content;
+
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   gap: 2px;
