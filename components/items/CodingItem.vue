@@ -10,7 +10,7 @@
       <h3 class="list-title">
         {{ title }}
       </h3>
-      <div class="technologies compact">
+      <div v-if="!compact" class="technologies compact">
         using
         <img
           v-for="t in using"
@@ -41,7 +41,11 @@
         </div>
       </div>
     </div>
-    <div class="technologies full" style="flex-direction: column">
+    <div
+      v-if="!compact"
+      class="technologies full"
+      style="flex-direction: column"
+    >
       using
       <div class="technologies-icons">
         <img
@@ -121,7 +125,7 @@ export default Vue.extend({
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
 
-  @media(max-width: breakpoints.$small) {
+  @media (max-width: breakpoints.$small) {
     display: none;
   }
 }

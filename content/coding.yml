@@ -1,7 +1,7 @@
 projects:
   - name: Personal website
     description: What you're reading right now! Designed from scratch using Figma and built from the ground up using modern web technologies.
-    status: active
+    status: finished
     image: personal.png
     using:
       - vue

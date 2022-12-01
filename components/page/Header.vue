@@ -63,6 +63,8 @@ export default Vue.extend({
       let right = this.$refs.edgeRight;
       let left = this.$refs.edgeLeft;
 
+      if (scroll === undefined) return;
+
       let maxGap = 64; //in px
       let maxScrollLeft = scroll.scrollWidth - scroll.clientWidth;
 
