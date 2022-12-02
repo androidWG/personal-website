@@ -1,6 +1,6 @@
 <template>
-  <div class="music-item">
-    <div class="clean cover" :class="{ playing: isPlaying }" @click="toggle">
+  <div class="item">
+    <div class="clean cover" :class="{ playing: isPlaying }" @click="togglePlay">
       <img
         class="cover-img"
         :src="`/covers/${filename}.jpg`"
@@ -49,6 +49,7 @@ import Button from "../button/Button.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
 import {map} from "../math.js";
 
+const smallIconsAmount = 3;
 let timerID = null;
 
 export default Vue.extend({
@@ -91,8 +92,8 @@ export default Vue.extend({
       let primary = [];
       let extra = [];
       if (this.links !== undefined) {
-        primary = this.links.slice(0, 4);
-        extra = this.links.slice(5, this.links.length);
+        primary = this.links.slice(0, smallIconsAmount);
+        extra = this.links.slice(smallIconsAmount + 1, this.links.length);
 
         if (extra.length > 0) {
           for (let i = 0; i < extra.length; i++) {
@@ -111,7 +112,7 @@ export default Vue.extend({
   },
   components: {DropdownButton, Button, PlayPauseButton},
   methods: {
-    toggle() {
+    togglePlay() {
       if (!this.isPlaying) {
         this.sample.play();
 
@@ -155,8 +156,10 @@ export default Vue.extend({
 @use "@/assets/css/_mixins" as m;
 @use "@/assets/css/_shadows.scss" as shadows;
 
-.music-item {
-  width: 347px;
+.item {
+  width: 33vw;
+  max-width: 400px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -164,8 +167,8 @@ export default Vue.extend({
 }
 
 .cover {
-  aspect-ratio: 1 / 1;
   width: 100%;
+  aspect-ratio: 1 / 1;
   height: auto;
   position: relative;
   display: inline-block;

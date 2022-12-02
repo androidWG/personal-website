@@ -1,7 +1,7 @@
 <template>
   <div class="skinny">
     <h1 id="hello">Hello!</h1>
-    <p class="body">
+    <p style="white-space: pre-line">
       {{ data.body }}
     </p>
 
@@ -9,6 +9,7 @@
       <div class="highlight-section">
         <h2>Latest Music</h2>
         <MusicItem
+          id="music-item"
           :filename="data.latestMusic.filename"
           :title="data.latestMusic.title"
           :date="data.latestMusic.date"
@@ -62,19 +63,11 @@ export default Vue.extend({
   font-family: main.$obviously;
   font-style: normal;
   font-weight: 670;
-  font-size: 64px;
-  line-height: 100px;
+  font-size: 48px;
   text-transform: uppercase;
 
   letter-spacing: normal;
   text-align: center;
-}
-
-.body {
-  font-size: 20px;
-  line-height: 24px;
-  white-space: pre-line;
-  color: main.$gray-light;
 }
 
 .highlights {
@@ -90,6 +83,16 @@ export default Vue.extend({
     flex-direction: column;
     justify-content: start;
     align-items: center;
+
+    #music-item {
+      width: 60vw;
+    }
+  }
+}
+
+@include breakpoints.q-tiny {
+  #music-item {
+    width: 80vw;
   }
 }
 
