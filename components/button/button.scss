@@ -5,12 +5,12 @@
 $icon: 23px;
 $radius: 16px;
 
-$total-pad-large: 24px;
-$total-pad-small: 16px;
-$font-large: 24px;
-$font-small: 21px;
-$h-large: 63px;
-$h-small: 52px;
+$total-pad-large: 20px;
+$total-pad-small: 14px;
+$font-large: 21px;
+$font-small: 18px;
+$h-large: 58px;
+$h-small: 50px;
 
 @mixin icon-base($padding) {
   height: $icon;
