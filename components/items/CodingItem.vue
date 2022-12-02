@@ -12,17 +12,23 @@
       </h3>
       <div v-if="!compact" class="technologies compact">
         using
-        <img
-          v-for="t in using"
-          :src="require(`@/assets/icons/white/${t}.svg`)"
-          :alt="t + ' logo'"
-        />
+        <div class="technologies-icons">
+          <img
+            class="technology"
+            v-for="t in using"
+            :src="require(`@/assets/icons/white/${t}.svg`)"
+            :alt="t + ' logo'"
+          />
+        </div>
         for
-        <img
-          v-for="t in platforms"
-          :src="require(`@/assets/icons/white/${t}.svg`)"
-          :alt="t + ' logo'"
-        />
+        <div class="technologies-icons">
+          <img
+            class="technology"
+            v-for="t in platforms"
+            :src="require(`@/assets/icons/white/${t}.svg`)"
+            :alt="t + ' logo'"
+          />
+        </div>
       </div>
       <slot class="desc"/>
       <div class="more-info">
@@ -32,6 +38,7 @@
             <img
               src="@/assets/icons/white/arrow-right.svg"
               alt="Arrow pointing right"
+              style="height: 16px"
             />
             {{ dateEnd }}
           </div>
@@ -44,11 +51,11 @@
     <div
       v-if="!compact"
       class="technologies full"
-      style="flex-direction: column"
     >
       using
       <div class="technologies-icons">
         <img
+          class="technology"
           v-for="t in using"
           :src="require(`@/assets/icons/white/${t}.svg`)"
           :alt="t + ' logo'"
@@ -57,6 +64,7 @@
       for
       <div class="technologies-icons">
         <img
+          class="technology"
           v-for="t in platforms"
           :src="require(`@/assets/icons/white/${t}.svg`)"
           :alt="t + ' logo'"
@@ -125,7 +133,7 @@ export default Vue.extend({
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
 
-  @media (max-width: breakpoints.$small) {
+  @include breakpoints.q-small {
     display: none;
   }
 }
@@ -137,6 +145,8 @@ export default Vue.extend({
     filter: brightness(0) saturate(100%) invert(48%) sepia(7%) saturate(401%) hue-rotate(245deg) brightness(80%) contrast(84%);
   }
 }
+
+$icon-size: 16px;
 
 .technologies {
   display: flex;
@@ -150,17 +160,29 @@ export default Vue.extend({
 
   &.full {
     width: 64px;
+    flex-direction: column;
   }
 }
 
 .technologies-icons {
-  max-width: 46px;
+  $gap: 4px;
+  max-width: $icon-size * 2 + $gap;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   height: fit-content;
-  gap: 6px;
+  gap: $gap;
+
+  @include breakpoints.q-small {
+    max-width: fit-content;
+  }
+}
+
+.technology {
+  width: $icon-size;
+  aspect-ratio: 1/1;
 }
 
 .more-info {

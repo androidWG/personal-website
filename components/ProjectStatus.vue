@@ -37,28 +37,23 @@ export default Vue.extend({
 @use "@/assets/css/main.scss";
 @use "@/assets/css/_filters.scss" as filters;
 
+$height: 16px;
+
 .status {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0;
-  gap: 5px;
+  height: $height;
 
   img {
-    width: 20px;
+    float: left;
+    height: 100%;
     aspect-ratio: 1 / 1;
   }
 
   .text {
-    height: min-content;
-    margin: 0;
-    padding: 0;
+    float: left;
+    height: 100%;
+    margin: 0 0 0 6px;
 
-    font-family: main.$forma;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 600;
     text-transform: uppercase;
   }
 }
