@@ -49,10 +49,11 @@ export default Vue.extend({
 
 .links {
   flex-wrap: wrap;
-  width: 100%;
+  width: fit-content;
+  padding: 0 32px;
 
   @include breakpoints.q-small {
-    gap: 16px;
+    gap: 12px;
   }
 }
 
