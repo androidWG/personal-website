@@ -37,6 +37,7 @@
           :new-tab="false"
           :selected="selected === 'design'"
           text="Design"
+          link="/design"
           ref="design-btn"
         />
       </div>
