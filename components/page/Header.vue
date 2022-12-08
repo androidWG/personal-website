@@ -60,11 +60,11 @@ export default Vue.extend({
   },
   methods: {
     updateOverlay() {
-      let scroll = this.$refs.scroll;
-      let right = this.$refs.edgeRight;
-      let left = this.$refs.edgeLeft;
+      let scroll = this.$refs.scroll as Element;
+      let right = this.$refs.edgeRight as HTMLElement;
+      let left = this.$refs.edgeLeft as HTMLElement;
 
-      if (scroll === undefined) return;
+      console.log(typeof right);
 
       let maxGap = 64; //in px
       let maxScrollLeft = scroll.scrollWidth - scroll.clientWidth;
@@ -146,7 +146,7 @@ export default Vue.extend({
   }
 
   .content {
-    $margin: 64px;
+    $margin: 32px;
     margin: -$margin auto;
     padding: $margin 32px;
 

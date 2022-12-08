@@ -1,7 +1,7 @@
 <template>
   <div style="overflow: clip">
     <Header :selected="$route.name"/>
-    <div class="scroll" :class="{ skinny: skinny }">
+    <div class="scroll">
       <div class="section">
         <Nuxt/>
       </div>
@@ -17,11 +17,6 @@ import Footer from "~/components/page/Footer.vue";
 
 export default Vue.extend({
   components: {Header, Footer},
-  data() {
-    return {
-      skinny: false,
-    };
-  },
 });
 </script>
 
