@@ -43,14 +43,12 @@ $gigantic: 1400px;
 
 
 .compact {
-  display: none !important;
-  @media(max-width: $small) {
-    display: inherit !important;
+  @media(min-width: $small) {
+    display: none !important;
   }
 }
 
 .full {
-  display: inherit !important;
   @media(max-width: $small) {
     display: none !important;
   }
