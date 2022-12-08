@@ -82,6 +82,6 @@ $two-items: ($item * 2) + $gap;
 }
 
 .music-item {
-  width: $item;
+  width: $item !important;
 }
 </style>
