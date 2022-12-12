@@ -10,6 +10,7 @@
           :image="d.image"
           :title="d.name"
           :date="d.date"
+          :link="d.link"
         ></DesignItem>
       </div>
     </div>

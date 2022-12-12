@@ -1,11 +1,11 @@
 <template>
-  <div class="item">
+  <a class="item" :href="link" target="_blank" rel="noopener noreferrer">
     <img class="thumbnail" :src="`/design/${image}`" alt="Project image"/>
     <div class="info">
       <h3 class="list-title">{{ title }}</h3>
       <p class="date">{{ dateFormatted }}</p>
     </div>
-  </div>
+  </a>
 </template>
 
 <script lang="ts">
@@ -16,6 +16,7 @@ export default Vue.extend({
     title: String,
     image: String,
     date: [Date, String],
+    link: String
   },
   computed: {
     dateFormatted() {
@@ -44,7 +45,8 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 16px;
+  text-decoration: none;
 
   user-select: none;
   cursor: pointer;
