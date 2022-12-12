@@ -1,24 +1,22 @@
-# Markdown: Syntax
+---
+title: Markdown Test
+date: 2022-06-01
+links:
+
+- platform: github
+  link: https://github.com/androidWG/personal-website
+  name: GitHub
+
+---
 
 * [Overview](#overview)
 * [Philosophy](#philosophy)
-* [Inline HTML](#inline-html)
-* [Automatic Escaping for Special Characters](#automatic-escaping)
 * [Block Elements](#block-elements)
 * [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
 * [Headers](#headers)
 * [Blockquotes](#blockquotes)
 * [Lists](#lists)
 * [Code Blocks](#code-blocks)
-* [Horizontal Rules](#horizontal-rules)
-* [Span Elements](#span-elements)
-* [Links](#links)
-* [Emphasis](#emphasis)
-* [Code](#code)
-* [Images](#images)
-* [Miscellaneous](#miscellaneous)
-* [Backslash Escapes](#backslash-escapes)
-* [Automatic Links](#automatic-links)
 
 ----
 
