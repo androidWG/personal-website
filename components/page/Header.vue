@@ -1,15 +1,15 @@
 <template>
   <div class="header">
     <div class="title">
-      <img src="~/assets/svg/Logo.svg" alt="Logo"/>
+      <img src="~/assets/svg/Logo.svg" alt="Logo" />
       <h1>sam rodrigues</h1>
     </div>
     <div class="menu">
       <div class="overlay">
         <div ref="edgeLeft" class="edge" id="left" style="opacity: 0"></div>
-        <div ref="edgeRight" class="edge" id="right"></div>
+        <div ref="edgeRight" class="edge" id="right" style="opacity: 0"></div>
       </div>
-      <div class="content" ref="scroll" v-on:scroll="updateOverlay">
+      <nav class="content" ref="scroll" v-on:scroll="updateOverlay">
         <Button
           :new-tab="false"
           :selected="selected === 'index'"
@@ -18,7 +18,7 @@
           icon="home"
           ref="home-btn"
         />
-        <Separator/>
+        <Separator />
         <Button
           :new-tab="false"
           :selected="selected === 'music'"
@@ -40,13 +40,13 @@
           link="/design"
           ref="design-btn"
         />
-      </div>
+      </nav>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {map} from "../math";
+import { map } from "../math";
 import Vue from "vue";
 import Button from "../button/Button.vue";
 import Links from "../Links.vue";
@@ -54,9 +54,12 @@ import Separator from "../Separator.vue";
 
 export default Vue.extend({
   name: "PageHeader",
-  components: {Button, Separator, Links},
+  components: { Button, Separator, Links },
   props: {
     selected: String,
+  },
+  mounted() {
+    this.scrollToSelected();
   },
   methods: {
     updateOverlay() {
@@ -78,6 +81,17 @@ export default Vue.extend({
         scroll.scrollLeft
       );
     },
+    scrollToSelected() {
+      let scroll = this.$refs.scroll as Element;
+      let children = Array.from(scroll.children);
+      children.forEach((e: Element) => {
+        if (e.classList.contains("selected")) {
+          e.scrollIntoView({inline: "center", block: "nearest"});
+          console.log("Scrolled to selected");
+          return;
+        }
+      });
+    }
   },
 });
 </script>
