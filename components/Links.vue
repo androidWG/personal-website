@@ -7,7 +7,7 @@
       link="mailto:sam.roliveira@pm.me"
     />
     <div class="sub">
-      <Button :small="true" icon="github" link="https://github.com/androidWG"/>
+      <Button :small="true" icon="github" link="https://github.com/androidWG" />
       <Button
         :small="true"
         icon="dribbble"
@@ -53,7 +53,7 @@ export default Vue.extend({
   padding: 0 32px;
 
   @include breakpoints.q-small {
-    gap: 12px;
+    gap: 8px;
   }
 }
 
@@ -63,7 +63,7 @@ export default Vue.extend({
   gap: 32px;
 
   @include breakpoints.q-small {
-    gap: 16px;
+    gap: 8px;
   }
 }
 </style>

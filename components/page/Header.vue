@@ -86,12 +86,12 @@ export default Vue.extend({
       let children = Array.from(scroll.children);
       children.forEach((e: Element) => {
         if (e.classList.contains("selected")) {
-          e.scrollIntoView({inline: "center", block: "nearest"});
+          e.scrollIntoView({ inline: "center", block: "nearest" });
           console.log("Scrolled to selected");
           return;
         }
       });
-    }
+    },
   },
 });
 </script>
@@ -104,6 +104,10 @@ export default Vue.extend({
   user-select: none;
 
   max-width: 100%;
+
+  @include breakpoints.q-small {
+    padding: 32px 0 16px;
+  }
 }
 
 .title {
@@ -127,7 +131,7 @@ export default Vue.extend({
 
   h1 {
     height: fit-content;
-    transform: translate(0, min(-1.5vw, -8px));
+    transform: translate(0, max(-1.5vw, -8px));
   }
 }
 
@@ -179,6 +183,10 @@ export default Vue.extend({
     // Hide the scrollbar on Chrome and Safari
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @include breakpoints.q-small {
+      gap: 16px;
     }
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
     <p id="footer-text">
-      © Sam Rodrigues 2022<br/>Using Material Icons <br/>Made with Figma,
+      © Sam Rodrigues 2022<br />Using Material Icons <br />Made with Figma,
       Vue.js and Nuxt
     </p>
-    <Links/>
+    <Links />
   </div>
 </template>
 
@@ -13,12 +13,13 @@ import Vue from "vue";
 import Links from "../Links.vue";
 
 export default Vue.extend({
-  components: {Links},
+  components: { Links },
 });
 </script>
 
 <style scoped lang="scss">
 @use "@/assets/css/main.scss";
+@use "@/assets/css/breakpoints.scss";
 
 .footer {
   width: 100%;

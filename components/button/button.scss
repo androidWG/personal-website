@@ -1,8 +1,10 @@
-@use "@/assets/css/main";
-@use "@/assets/css/icon";
-@use "@/assets/css/_shadows" as shadows;
+@use "@/assets/css/main.scss";
+@use "@/assets/css/icon.scss";
+@use "@/assets/css/breakpoints.scss";
+@use "@/assets/css/_shadows.scss" as shadows;
 
-$icon: 23px;
+$icon-large: 23px;
+$icon-small: 18px;
 $radius: 16px;
 
 $total-pad-large: 20px;
@@ -12,7 +14,7 @@ $font-small: 18px;
 $h-large: 58px;
 $h-small: 50px;
 
-@mixin icon-base($padding) {
+@mixin icon-base($padding, $icon) {
   height: $icon;
   aspect-ratio: 1 / 1;
 
@@ -71,6 +73,20 @@ $h-small: 50px;
     background: main.$gray-medium;
     box-shadow: shadows.$highlighted;
   }
+
+  @include breakpoints.q-small{
+    font-size: $font-small;
+    height: $h-small;
+    min-width: $h-small;
+
+    .icon {
+      @include icon-base($total-pad-small, $icon-small);
+    }
+
+    .text {
+      @include text-base($total-pad-small);
+    }
+  }
 }
 
 .selected {
@@ -81,7 +97,7 @@ $h-small: 50px;
 }
 
 .icon {
-  @include icon-base($total-pad-large);
+  @include icon-base($total-pad-large, $icon-large);
 }
 
 .text {
@@ -95,7 +111,7 @@ $h-small: 50px;
   min-width: $h-small;
 
   .icon {
-    @include icon-base($total-pad-small);
+    @include icon-base($total-pad-small, $icon-small);
   }
 
   .text {

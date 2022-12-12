@@ -1,11 +1,11 @@
 <template>
   <div style="overflow: clip">
-    <Header :selected="$route.name"/>
+    <Header :selected="$route.name" />
     <div class="scroll">
       <div class="section">
-        <Nuxt/>
+        <Nuxt />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ import Header from "~/components/page/Header.vue";
 import Footer from "~/components/page/Footer.vue";
 
 export default Vue.extend({
-  components: {Header, Footer},
+  components: { Header, Footer },
 });
 </script>
 
@@ -37,12 +37,12 @@ export default Vue.extend({
   width: fit-content;
   margin: 0 96px;
 
-  @media(max-width: breakpoints.$medium) {
+  @media (max-width: breakpoints.$medium) {
     margin: 0 64px;
   }
 
-  @media(max-width: breakpoints.$small) {
-    margin: 0 48px;
+  @media (max-width: breakpoints.$small) {
+    margin: 0 32px;
   }
 }
 </style>
