@@ -11,12 +11,14 @@ software:
   - name: Discord.fm
     description: A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord rich presence.
     status: active
+    link: https://github.com/androidWG/Discord.fm
     dates:
       start: 2021
       finish: present
   - name: Mergify
     description: Merge Spotify playlists into one, keeping them automatically updated.
     status: paused
+    link: https://github.com/androidWG/Mergify
     dates:
       start: 2022
       finish: present

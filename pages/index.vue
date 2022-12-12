@@ -22,12 +22,11 @@
           v-for="item in data.software"
           :key="item.name"
           :compact="true"
+          :link="item.link"
           :title="item.name"
           :dateStart="item.dates.start"
           :dateEnd="item.dates.finish"
           :status="item.status"
-          :using="item.using"
-          :platforms="item.for"
         >
           {{ item.description }}
         </CodingItem>
@@ -46,10 +45,10 @@ export default Vue.extend({
     MusicItem,
     CodingItem,
   },
-  async asyncData({$content, params}) {
+  async asyncData({ $content, params }) {
     let data = await $content("home", params.slug).fetch();
     return {
-      data
+      data,
     };
   },
 });

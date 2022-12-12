@@ -2,6 +2,7 @@ projects:
   - name: Personal website
     description: What you're reading right now! Designed from scratch using Figma and built from the ground up using modern web technologies.
     status: finished
+    link: https://github.com/androidWG/personal-website
     image: personal.png
     using:
       - vue
@@ -14,6 +15,7 @@ projects:
   - name: Discord.fm
     description: A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord rich presence.
     status: active
+    link: https://github.com/androidWG/Discord.fm
     image: discord-fm.png
     using:
       - python
@@ -26,6 +28,7 @@ projects:
   - name: Mergify
     description: Merge Spotify playlists into one, keeping them automatically updated.
     status: paused
+    link: https://github.com/androidWG/Mergify
     image: mergify.svg
     using:
       - python
@@ -38,6 +41,7 @@ projects:
   - name: Know Your Music
     description: Browser-based game where a small section of a song from your library is played and you have to guess the title and artist.
     status: paused
+    link: https://github.com/androidWG/KnowYourMusic
     using:
       - vue
       - javascript
@@ -48,6 +52,7 @@ projects:
   - name: SmartLyrics/Tokigo
     description: Android lyrics app based on Genius.com made with Xamarin, originally called SmartLyrics but renamed to Tokigo right before being archived.
     status: archived
+    link: https://github.com/androidWG/SmartLyrics
     image: tokigo.png
     using:
       - c-sharp
@@ -59,6 +64,7 @@ projects:
   - name: WLM Online
     description: Demo of how a semi-responsive version of the late Windows Live Messenger would look.
     status: finished
+    link: https://github.com/androidWG/WLMOnline
     using:
       - html5
       - css3

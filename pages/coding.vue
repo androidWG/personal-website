@@ -13,6 +13,7 @@
         :using="c.using"
         :platforms="c.for"
         :key="c.name"
+        :link="c.link"
       >
         {{ c.description }}
       </CodingItem>
@@ -25,18 +26,18 @@ import Vue from "vue";
 import CodingItem from "~/components/items/CodingItem.vue";
 
 export default Vue.extend({
-  components: {CodingItem},
+  components: { CodingItem },
   head() {
     return {
       title: "Sam Rodrigues | Coding",
     };
   },
-  async asyncData({$content, params}) {
+  async asyncData({ $content, params }) {
     const data = await $content("coding", params.slug).fetch();
     return {
       data,
     };
-  }
+  },
 });
 </script>
 

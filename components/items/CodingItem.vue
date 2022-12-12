@@ -30,7 +30,7 @@
           />
         </div>
       </div>
-      <slot class="desc"/>
+      <slot class="desc" />
       <div class="more-info">
         <div class="more-info-list dates">
           {{ dateStart }}
@@ -44,14 +44,11 @@
           </div>
         </div>
         <div class="more-info-list">
-          <ProjectStatus :status="status"/>
+          <ProjectStatus :status="status" />
         </div>
       </div>
     </div>
-    <div
-      v-if="!compact"
-      class="technologies full"
-    >
+    <div v-if="!compact" class="technologies full">
       using
       <div class="technologies-icons">
         <img
@@ -106,6 +103,8 @@ export default Vue.extend({
   align-items: center;
   padding: 0;
   gap: 1rem;
+  text-decoration: none;
+  color: main.$gray-very-light;
 
   user-select: none;
   cursor: pointer;
@@ -142,7 +141,8 @@ export default Vue.extend({
   color: main.$gray-medium;
 
   img {
-    filter: brightness(0) saturate(100%) invert(48%) sepia(7%) saturate(401%) hue-rotate(245deg) brightness(80%) contrast(84%);
+    filter: brightness(0) saturate(100%) invert(48%) sepia(7%) saturate(401%)
+      hue-rotate(245deg) brightness(80%) contrast(84%);
   }
 }
 
