@@ -1,13 +1,17 @@
 <template>
   <div class="item">
-    <div class="clean cover" :class="{ playing: isPlaying }" @click="togglePlay">
+    <div
+      class="clean cover"
+      :class="{ playing: isPlaying }"
+      @click="togglePlay"
+    >
       <img
         class="cover-img"
         :src="`/covers/${filename}.jpg`"
         alt="Album Cover"
       />
       <div class="cover-btn">
-        <PlayPauseButton style="margin: 0 auto" ref="button"/>
+        <PlayPauseButton style="margin: 0 auto" ref="button" />
         <p id="play-text">
           {{ isPlaying || isPlaying ? "stop playing" : "play sample" }}
         </p>
@@ -44,10 +48,10 @@
 <script>
 import DropdownButton from "~/components/button/DropdownButton";
 import Vue from "vue";
-import {Howl, Howler} from "howler";
+import { Howl, Howler } from "howler";
 import Button from "../button/Button.vue";
 import PlayPauseButton from "../button/PlayPause.vue";
-import {map} from "../math.js";
+import { map } from "../math.js";
 
 const smallIconsAmount = 3;
 let timerID = null;
@@ -102,15 +106,15 @@ export default Vue.extend({
             if (l.name !== undefined) {
               text = l.name;
             }
-            extra[i] = {icon: l.platform, text: text, link: l.link};
+            extra[i] = { icon: l.platform, text: text, link: l.link };
           }
         }
       }
 
-      return {primary: primary, extra: extra};
+      return { primary: primary, extra: extra };
     },
   },
-  components: {DropdownButton, Button, PlayPauseButton},
+  components: { DropdownButton, Button, PlayPauseButton },
   methods: {
     togglePlay() {
       if (!this.isPlaying) {
@@ -153,7 +157,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 @use "@/assets/css/main.scss";
-@use "@/assets/css/_mixins" as m;
+@use "@/assets/css/_mixins.scss" as m;
 @use "@/assets/css/_shadows.scss" as shadows;
 
 .item {

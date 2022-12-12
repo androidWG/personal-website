@@ -36,13 +36,13 @@ import Vue from "vue";
 import MusicItem from "~/components/items/MusicItem.vue";
 
 export default Vue.extend({
-  components: {MusicItem},
+  components: { MusicItem },
   head() {
     return {
       title: "Sam Rodrigues | Music",
     };
   },
-  async asyncData({$content, params}) {
+  async asyncData({ $content, params }) {
     const data = await $content("music", params.slug).fetch();
     return {
       data,
@@ -53,15 +53,30 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 $gap: 24px;
-$item: 271px; //size of the music item element
+$item: 300px; //size of the music item element
 $page-pad: 96px * 2;
 
 $three-items: ($item * 3) + ($gap * 2);
 $two-items: ($item * 2) + $gap;
 
 .container {
-  @media (min-width: $item + $page-pad) {
-    width: $item;
+  width: fit-content;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding: 0;
+  gap: $gap;
+  @media (max-width: $two-items + $page-pad) {
+    flex-direction: column;
+    width: fit-content;
+
+    .music-item {
+      width: 100%;
+    }
   }
   @media (min-width: $two-items + $page-pad) {
     width: $two-items;
@@ -71,17 +86,7 @@ $two-items: ($item * 2) + $gap;
   }
 }
 
-.list {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  padding: 0;
-  gap: $gap;
-}
-
 .music-item {
-  width: $item !important;
+  width: $item;
 }
 </style>

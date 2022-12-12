@@ -73,20 +73,6 @@ $h-small: 50px;
     background: main.$gray-medium;
     box-shadow: shadows.$highlighted;
   }
-
-  @include breakpoints.q-small{
-    font-size: $font-small;
-    height: $h-small;
-    min-width: $h-small;
-
-    .icon {
-      @include icon-base($total-pad-small, $icon-small);
-    }
-
-    .text {
-      @include text-base($total-pad-small);
-    }
-  }
 }
 
 .selected {
