@@ -13,6 +13,7 @@
           :filename="data.latestMusic.filename"
           :title="data.latestMusic.title"
           :date="data.latestMusic.date"
+          :links="data.latestMusic.links"
         />
       </div>
       <div class="highlight-section">
@@ -41,6 +42,7 @@ import MusicItem from "~/components/items/MusicItem.vue";
 import CodingItem from "~/components/items/CodingItem.vue";
 
 export default Vue.extend({
+  transition: 'home',
   components: {
     MusicItem,
     CodingItem,
@@ -57,6 +59,9 @@ export default Vue.extend({
 <style lang="scss">
 @use "@/assets/css/main.scss";
 @use "@/assets/css/breakpoints.scss";
+
+.home-enter-active, .home-leave-active { transition: opacity .5s; }
+.home-enter, .home-leave-active { opacity: 0; }
 
 #hello {
   font-family: main.$obviously;
