@@ -2,9 +2,9 @@
   <div class="links h-list">
     <Button
       :small="true"
-      text="sam.roliveira@pm.me"
+      text="me@samrodrigues.net"
       icon="mail"
-      link="mailto:sam.roliveira@pm.me"
+      link="mailto:me@samrodrigues.net"
     />
     <div class="sub">
       <Button :small="true" icon="github" link="https://github.com/androidWG" />
