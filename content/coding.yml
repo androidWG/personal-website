@@ -1,4 +1,16 @@
 projects:
+  - name: Music website
+    description: A website specific to catalog and link to all my music projects and profiles. Following the 90s/2000s web aesthetic, but built with modern devices in mind.
+    status: finished
+    link: https://music.androidwg.net
+    image: androidwg.png
+    using:
+      - svelte
+      - javascript
+    for:
+      - web
+    dates:
+      start: 2023
   - name: Personal website
     description: What you're reading right now! Designed from scratch using Figma and built from the ground up using modern web technologies.
     status: finished
