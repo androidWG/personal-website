@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <p id="footer-text">
-      © Sam Rodrigues 2022<br />Using Material Icons <br />Made with Figma,
+      © Anna Rodrigues 2023<br />Using Material Icons <br />Made with Figma,
       Vue.js and Nuxt
     </p>
     <Links />

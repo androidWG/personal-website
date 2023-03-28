@@ -2,7 +2,7 @@
   <div class="header">
     <div class="title">
       <img src="~/assets/svg/Logo.svg" alt="Logo" />
-      <h1>sam rodrigues</h1>
+      <h1>anna rodrigues</h1>
     </div>
     <div class="menu">
       <div class="overlay">

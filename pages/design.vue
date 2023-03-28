@@ -25,7 +25,7 @@ export default Vue.extend({
   components: {DesignItem},
   head() {
     return {
-      title: "Sam Rodrigues | Design"
+      title: "Anna Rodrigues | Design"
     }
   },
   async asyncData({$content, params}) {

@@ -29,7 +29,7 @@ export default Vue.extend({
   components: { CodingItem },
   head() {
     return {
-      title: "Sam Rodrigues | Coding",
+      title: "Anna Rodrigues | Coding",
     };
   },
   async asyncData({ $content, params }) {

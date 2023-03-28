@@ -39,7 +39,7 @@ export default Vue.extend({
   components: { MusicItem },
   head() {
     return {
-      title: "Sam Rodrigues | Music",
+      title: "Anna Rodrigues | Music",
     };
   },
   async asyncData({ $content, params }) {

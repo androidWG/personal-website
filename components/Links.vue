@@ -26,7 +26,7 @@
       <Button
         :small="true"
         icon="linkedin"
-        link="https://linkedin.com/in/sam-rodrigues-o"
+        link="https://www.linkedin.com/in/anna-roliveira/"
       />
     </div>
   </div>
