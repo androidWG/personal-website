@@ -21,6 +21,13 @@
         <Separator />
         <Button
           :new-tab="false"
+          :selected="selected === 'design'"
+          text="Design"
+          link="/design"
+          ref="design-btn"
+        />
+        <Button
+          :new-tab="false"
           :selected="selected === 'music'"
           text="Music"
           link="/music"
@@ -32,13 +39,6 @@
           text="Coding"
           link="/coding"
           ref="coding-btn"
-        />
-        <Button
-          :new-tab="false"
-          :selected="selected === 'design'"
-          text="Design"
-          link="/design"
-          ref="design-btn"
         />
       </nav>
     </div>
