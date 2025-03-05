@@ -3,7 +3,6 @@
     <img class="thumbnail" :src="`/design/${image}`" alt="Project image"/>
     <div class="info">
       <h3 class="list-title">{{ title }}</h3>
-      <p class="date">{{ dateFormatted }}</p>
     </div>
   </a>
 </template>

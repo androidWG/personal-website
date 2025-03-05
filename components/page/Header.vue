@@ -28,17 +28,17 @@
         />
         <Button
           :new-tab="false"
-          :selected="selected === 'music'"
-          text="Music"
-          link="/music"
-          ref="music-btn"
-        />
-        <Button
-          :new-tab="false"
           :selected="selected === 'coding'"
           text="Coding"
           link="/coding"
           ref="coding-btn"
+        />
+        <Button
+          :new-tab="false"
+          :selected="selected === 'music'"
+          text="Music"
+          link="/music"
+          ref="music-btn"
         />
       </nav>
     </div>

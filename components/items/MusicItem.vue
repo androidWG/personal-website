@@ -162,7 +162,7 @@ export default Vue.extend({
 
 .item {
   width: 33vw;
-  max-width: 400px;
+  max-width: 325px;
 
   display: flex;
   flex-direction: column;
@@ -232,7 +232,7 @@ export default Vue.extend({
     font-family: main.$mono;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
   }
 }
