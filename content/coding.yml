@@ -25,7 +25,7 @@ projects:
     dates:
       start: 2022
   - name: Discord.fm
-    description: A background service app for desktop that syncs your Last.fm scrobble with your Discord rich presence.
+    description: A background service app for desktop that shows what you're playing on Discord, no matter where you're listening from using Last.fm data.
     status: active
     link: https://github.com/androidWG/Discord.fm
     image: discord-fm.png

@@ -1,5 +1,5 @@
 body:
-  I’m Anna Rodrigues, also know online as androidWG. I make many things but mostly music, apps, websites and UI/UX designs for fun. You can find almost all of my recent work on this website.
+  I’m Anna Rodrigues, also known online as androidWG. I'm a graphic designer and programmer by trade and on my free time, I make many things but mostly music, apps, websites and UI/UX designs for fun. You can find almost all of my recent work on this website.
 
 
   Brazilian born but living in Montréal, Canada since February 2022, I’ve been programming since 2013, designing since around 2018 and making music since 2020. I love using my projects to learn new technologies, techniques, platforms, and of course have new ideas, and my overall work extends to many more projects that didn’t pass the trial phase.
@@ -29,7 +29,7 @@ latestMusic:
       link: https://androidwg.bandcamp.com/album/c-system32-media
 software:
   - name: Discord.fm
-    description: A background service app for Windows and macOS that syncs your Last.fm scrobble with your Discord rich presence.
+    description: A background service app for desktop that shows what you're playing on Discord, no matter where you're listening from using Last.fm data.
     status: active
     link: https://github.com/androidWG/Discord.fm
     dates:
